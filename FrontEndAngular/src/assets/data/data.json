@@ -1,0 +1,90 @@
+{
+    "nombre": "Norberto Llopiz",
+    "foto": "",
+    "titulo": "Full Stack Developper Jr",
+    "ubicacion":"Mendoza (Argentina)",
+    "sobreMi": "Información profesional resumida (con botón de edición y/o eliminar) Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio quos mollitia earum tempora repellendus ab deleniti sunt quo repellat beatae illo facilis ullam numquam sint vel reiciendis, magni iste. Non!",
+    "experiencia": [
+        {
+            "titulo": "Título del Puesto 1",
+            "periodo": "Desde - Hasta",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        },
+        {
+            "titulo": "Título del Puesto 2",
+            "periodo": "Desde - Hasta",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        },
+        {
+            "titulo": "Título del Puesto 2",
+            "periodo": "Desde - Hasta",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        }
+    ],
+    "formacion": [
+        {
+            "titulo": "Título del Puesto 1",
+            "periodo": "Desde - Hasta",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        },
+        {
+            "titulo": "Título del Puesto 2",
+            "periodo": "Desde - Hasta",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        },
+        {
+            "titulo": "Título del Puesto 2",
+            "periodo": "Desde - Hasta",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        }
+    ],
+    "skills": [
+        {
+            "skill1": "Skill 1",
+            "porcentaje": "70"
+        },
+        {
+            "skill1": "Skill 2",
+            "porcentaje": "70"
+        },
+        {
+            "skill1": "Skill 3",
+            "porcentaje": "70"
+        },
+        {
+            "skill1": "Skill 4",
+            "porcentaje": "50"
+        },
+        {
+            "skill1": "Skill 5",
+            "porcentaje": "55"
+        },
+        {
+            "skill1": "Skill 6",
+            "porcentaje": "50"
+        }
+    ],
+    "proyectos": [
+        {
+            "titulo": "Título del Proyecto 1",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        },
+        {
+            "titulo": "Título del Proyecto 2",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        },
+        {
+            "titulo": "Título del Proyecto 2",
+            "logo": "Logo",
+            "descripcion": "Descripción de las actividades "
+        }
+    ]
+}
