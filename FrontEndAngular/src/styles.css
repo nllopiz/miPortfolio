@@ -1,37 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    /*Color negro de fondo*/
-    background-color: #1C1C1C;
-}
-
-.margin-miFoto {
-    margin-top: 0px;
+  /*Color negro de fondo*/
+  background-color: #1C1C1C;
+  background: url(src/assets/images/negroYrojo.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .bg-rojo {
-    /*Color rojo de fondo*/
-    background-color: #E31B25;
+  /*Color rojo de fondo*/
+  background-color: #E31B25;
 }
 
 .text-rojo {
-    color: #E31B25;
+  color: #E31B25;
 }
 
 .bg-negro {
-    /*Color negro de fondo*/
-    background-color: #1C1C1C;
+  /*Color negro de fondo*/
+  background-color: #1C1C1C;
 }
 
 .border-negro {
-    border-color: #1C1C1C;
+  border-color: #1C1C1C;
 }
 
-@media (max-width: 576px) {
-    #miFoto {
-        margin-top: -300px;
-    }    
-}
+/*@media (max-width: 576px) {
+
+}*/
+
 
 /*
 Para chart
