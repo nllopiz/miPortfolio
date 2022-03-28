@@ -28,6 +28,10 @@ body {
   border-color: #1C1C1C;
 }
 
+.action-btn:hover {
+  color: white;
+}
+
 /*@media (max-width: 576px) {
 
 }*/
