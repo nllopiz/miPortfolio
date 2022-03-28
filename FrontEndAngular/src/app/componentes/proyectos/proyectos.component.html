@@ -1,69 +1,112 @@
-<section class="container text-light mt-5" name="proyectos">
-    <div class="row position-relative">
+<section class="container text-light" name="proyectos">
+
+	<div class="row align-items-center">
+
+	<!-- Navegación <  -->
+  <div class="col-sm-1 text-center">
+    <a routerLink="/skills">
+      <h1>
+        <i class="bi bi-chevron-compact-left text-rojo bg-negro action-btn"></i>
+      </h1>
+    </a>
+  </div>
+
+  <!-- Contenido -->
+  <div class="col-sm-10 align-items-center">
+
+      <!--Título y botón editar-->
+      <div class="d-flex align-items-star">
+        <h1 class="d-inline">Proyectos</h1>
+        <a href="#proyectos" onclick="editarProyectos()"
+          ><span class="badge bg-negro text-rojo ms-4 action-btn"
+            ><i class="bi bi-pencil"></i></span
+        ></a>
+      </div>
+      <div>
+        <p>
+          En esta sección deberá encontrarse la información sobre los proyectos
+          que desarrollaste o en que te involucraste, incluyendo este portfolio
+          web. Cada proyecto deberá contener el nombre, fecha de realización,
+          descripción y el link a su evidencia. Además, podés ilustrar esta
+          sección con imágenes de los proyectos
+        </p>
+      </div>
+      <!--Proyecto 1-->
+      <div class="row">
         <!--Título y botón editar-->
         <div class="d-flex align-items-star">
-            <h1 class="d-inline">Proyectos </h1><a href="#proyectos" onclick=editarProyectos()><span
-                    class="badge bg-negro text-rojo ms-4"><i class="bi bi-pencil"></i></span></a>
+          <h3 class="d-inline">Proyecto 1</h3>
+          <a href="#experiencia" onclick="editarProyecto()"
+            ><span class="badge bg-negro text-rojo ms-4 action-btn"
+              ><i class="bi bi-pencil"></i></span
+          ></a>
+          <a href="#experiencia" onclick="eliminarProyecto()"
+            ><span class="badge bg-negro text-rojo ms-2 action-btn"
+              ><i class="bi bi-x-lg"></i></span
+          ></a>
         </div>
-        <div>
-            <p>
-                En esta sección deberá encontrarse la información sobre los proyectos que desarrollaste o en que te
-                involucraste, incluyendo este portfolio web. Cada proyecto deberá contener el nombre, fecha de
-                realización, descripción y el link a su evidencia. Además, podés ilustrar esta sección con imágenes
-                de
-                los proyectos
-            </p>
+        <div class="col-2 text-center">
+          <p>Captura de pantalla</p>
         </div>
-        <!--Proyecto 1-->
-        <div class="row">
-            <!--Título y botón editar-->
-            <div class="d-flex align-items-star">
-                <h3 class="d-inline">Proyecto 1 </h3>
-                <a href="#experiencia" onclick=editarProyecto()><span class="badge bg-negro text-rojo ms-4"><i
-                            class="bi bi-pencil"></i></span></a>
-                <a href="#experiencia" onclick=eliminarProyecto()><span class="badge bg-negro text-rojo ms-2"><i
-                            class="bi bi-x-lg"></i></span></a>
-            </div>                
-            <div class="col-2 text-center">
-                <p>Captura de pantalla</p>
-            </div>
-            <div class="col-10">
-                <p>Descripción del proyecto</p>
-            </div>
+        <div class="col-10">
+          <p>Descripción del proyecto</p>
         </div>
-        <!--Proyecto 2-->
-        <div class="row">
-            <!--Título y botón editar-->
-            <div class="d-flex align-items-star">
-                <h3 class="d-inline">Proyecto 2 </h3>
-                <a href="#experiencia" onclick=editarProyecto()><span class="badge bg-negro text-rojo ms-4"><i
-                            class="bi bi-pencil"></i></span></a>
-                <a href="#experiencia" onclick=eliminarProyecto()><span class="badge bg-negro text-rojo ms-2"><i
-                            class="bi bi-x-lg"></i></span></a>
-            </div>                
-            <div class="col-2 text-center">
-                <p>Captura de pantalla</p>
-            </div>
-            <div class="col-10">
-                <p>Descripción del proyecto</p>
-            </div>
+      </div>
+      <!--Proyecto 2-->
+      <div class="row">
+        <!--Título y botón editar-->
+        <div class="d-flex align-items-star">
+          <h3 class="d-inline">Proyecto 2</h3>
+          <a href="#experiencia" onclick="editarProyecto()"
+            ><span class="badge bg-negro text-rojo ms-4 action-btn"
+              ><i class="bi bi-pencil"></i></span
+          ></a>
+          <a href="#experiencia" onclick="eliminarProyecto()"
+            ><span class="badge bg-negro text-rojo ms-2 action-btn"
+              ><i class="bi bi-x-lg"></i></span
+          ></a>
         </div>
-        <!--Proyecto 1-->
-        <div class="row">
-            <!--Título y botón editar-->
-            <div class="d-flex align-items-star">
-                <h3 class="d-inline">Proyecto 3 </h3>
-                <a href="#experiencia" onclick=editarProyecto()><span class="badge bg-negro text-rojo ms-4"><i
-                            class="bi bi-pencil"></i></span></a>
-                <a href="#experiencia" onclick=eliminarProyecto()><span class="badge bg-negro text-rojo ms-2"><i
-                            class="bi bi-x-lg"></i></span></a>
-            </div>                
-            <div class="col-2 text-center">
-                <p>Captura de pantalla</p>
-            </div>
-            <div class="col-10">
-                <p>Descripción del proyecto</p>
-            </div>
+        <div class="col-2 text-center">
+          <p>Captura de pantalla</p>
         </div>
-    </div>
+        <div class="col-10">
+          <p>Descripción del proyecto</p>
+        </div>
+      </div>
+      <!--Proyecto 1-->
+      <div class="row">
+        <!--Título y botón editar-->
+        <div class="d-flex align-items-star">
+          <h3 class="d-inline">Proyecto 3</h3>
+          <a href="#experiencia" onclick="editarProyecto()"
+            ><span class="badge bg-negro text-rojo ms-4 action-btn"
+              ><i class="bi bi-pencil"></i></span
+          ></a>
+          <a href="#experiencia" onclick="eliminarProyecto()"
+            ><span class="badge bg-negro text-rojo ms-2 action-btn"
+              ><i class="bi bi-x-lg"></i></span
+          ></a>
+        </div>
+        <div class="col-2 text-center">
+          <p>Captura de pantalla</p>
+        </div>
+        <div class="col-10">
+          <p>Descripción del proyecto</p>
+        </div>
+      </div>
+    
+  </div>
+
+  <!-- Navegación >  -->
+  <div class="col-sm-1 text-center">
+    <a routerLink="/acerca-de">
+      <h1>
+        <i
+          class="bi bi-chevron-compact-right text-rojo bg-negro action-btn"
+        ></i>
+      </h1>
+    </a>
+  </div>
+</div>
+
 </section>

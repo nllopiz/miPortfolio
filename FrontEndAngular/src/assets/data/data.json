@@ -26,19 +26,19 @@
     ],
     "formacion": [
         {
-            "titulo": "Título del Puesto 1",
+            "titulo": "Título 1",
             "periodo": "Desde - Hasta",
             "logo": "Logo",
             "descripcion": "Descripción de las actividades "
         },
         {
-            "titulo": "Título del Puesto 2",
+            "titulo": "Título 2",
             "periodo": "Desde - Hasta",
             "logo": "Logo",
             "descripcion": "Descripción de las actividades "
         },
         {
-            "titulo": "Título del Puesto 2",
+            "titulo": "Título 3",
             "periodo": "Desde - Hasta",
             "logo": "Logo",
             "descripcion": "Descripción de las actividades "
@@ -46,28 +46,34 @@
     ],
     "skills": [
         {
-            "skill1": "Skill 1",
-            "porcentaje": "70"
+            "skill": "Skill 1",
+            "porcentaje1": "70",
+            "porcentaje2": "30"
         },
         {
-            "skill1": "Skill 2",
-            "porcentaje": "70"
+            "skill": "Skill 2",
+            "porcentaje1": "65",
+            "porcentaje2": "35"
         },
         {
-            "skill1": "Skill 3",
-            "porcentaje": "70"
+            "skill": "Skill 3",
+            "porcentaje1": "70",
+            "porcentaje2": "30"
         },
         {
-            "skill1": "Skill 4",
-            "porcentaje": "50"
+            "skill": "Skill 4",
+            "porcentaje1": "50",
+            "porcentaje2": "50"
         },
         {
-            "skill1": "Skill 5",
-            "porcentaje": "55"
+            "skill": "Skill 5",
+            "porcentaje1": "55",
+            "porcentaje2": "45"
         },
         {
-            "skill1": "Skill 6",
-            "porcentaje": "50"
+            "skill": "Skill 6",
+            "porcentaje1": "50",
+            "porcentaje2": "70"
         }
     ],
     "proyectos": [

@@ -1,25 +1,19 @@
 <section class="container text-light" name="educacion">
-
-	<div class="row align-items-center">
-
-		<!-- Navegación <  -->
-		<div class="col-sm-1">
-      <div class="row align-items-center">
-
-        <div class="col-sm-1 justify-content-center">
-          <a routerLink="/acerca-de">
-            <h1>
-              <i
-                class="bi bi-chevron-compact-left text-rojo bg-negro action-btn"
-              ></i>
-            </h1>
-          </a>
-        </div>
-      </div>
+  <div class="row align-items-center">
+    <!-- Navegación <  -->
+    <div class="col-sm-1 text-center">
+      <a routerLink="/experiencia">
+        <h1>
+          <i
+            class="bi bi-chevron-compact-left text-rojo bg-negro action-btn"
+          ></i>
+        </h1>
+      </a>
     </div>
 
-		<!-- Contenido  -->
+    <!-- Contenido  -->
     <div class="col-sm-10 align-items-center">
+      
       <div class="row">
         <!--Título y botón editar-->
         <div class="d-flex align-items-star">
@@ -29,12 +23,13 @@
               ><i class="bi bi-pencil"></i></span
           ></a>
         </div>
-        <div id="listaFormacion">
-          <!--Puesto1-->
-          <div class="row">
+
+        <div id="listaFormacion" *ngFor="let formacion of misdatos.formacion">
+          <!--Puesto-->
+          <div class="row my-2" >
             <!--Título y botón editar-->
             <div class="d-flex align-items-star">
-              <h3 class="d-inline">Titulo del puesto 1</h3>
+              <h3 class="d-inline">{{ formacion.titulo }}</h3>
               <a href="#" onclick="editarPuesto()"
                 ><span class="badge bg-negro text-rojo ms-4 action-btn"
                   ><i class="bi bi-pencil"></i></span
@@ -45,83 +40,31 @@
               ></a>
             </div>
             <div>
-              <h5>Período</h5>
+              <h5>{{ formacion.periodo }}</h5>
             </div>
             <div class="col-2 text-center">
-              <p>logo de la empresa</p>
+              <p>{{ formacion.logo }}</p>
             </div>
             <div class="col-10">
-              <p>descripción de actividades realizadas en ese puesto</p>
+              <p>{{ formacion.descripcion }}</p>
             </div>
-            <p>drag and drop https://youtu.be/-N515SDoYuU</p>
-          </div>
-          <!--Puesto2-->
-          <div class="row">
-            <!--Título y botón editar-->
-            <div class="d-flex align-items-star">
-              <h3 class="d-inline">Titulo del puesto 2</h3>
-              <a href="#experiencia" onclick="editarPuesto()"
-                ><span class="badge bg-negro text-rojo ms-4 action-btn"
-                  ><i class="bi bi-pencil"></i></span
-              ></a>
-              <a href="#experiencia" onclick="eliminarPuesto()"
-                ><span class="badge bg-negro text-rojo ms-2"
-                  ><i class="bi bi-x-lg"></i></span
-              ></a>
-            </div>
-            <div>
-              <h5>Período</h5>
-            </div>
-            <div class="col-2 text-center">
-              <p>logo de la empresa</p>
-            </div>
-            <div class="col-10">
-              <p>descripción de actividades realizadas en ese puesto</p>
-            </div>
-            <p>drag and drop https://youtu.be/-N515SDoYuU</p>
-          </div>
-          <!--Puesto3-->
-          <div class="row">
-            <!--Título y botón editar-->
-            <div class="d-flex align-items-star">
-              <h3 class="d-inline">Titulo del puesto 3</h3>
-              <a href="#experiencia" onclick="editarPuesto()"
-                ><span class="badge bg-negro text-rojo ms-4 action-btn"
-                  ><i class="bi bi-pencil"></i></span
-              ></a>
-              <a href="#experiencia" onclick="eliminarPuesto()"
-                ><span class="badge bg-negro text-rojo ms-2"
-                  ><i class="bi bi-x-lg"></i></span
-              ></a>
-            </div>
-            <div>
-              <h5>Período</h5>
-            </div>
-            <div class="col-2 text-center">
-              <p>logo de la empresa</p>
-            </div>
-            <div class="col-10">
-              <p>descripción de actividades realizadas en ese puesto</p>
-            </div>
-            <p>drag and drop https://youtu.be/-N515SDoYuU</p>
+            <!-- <p>drag and drop https://youtu.be/-N515SDoYuU</p> -->
           </div>
         </div>
-      </div>
-    </div>
-    
-		<!-- Navegación >  -->
-		<div class="col-sm-1">    
-      <div class="col-sm-1 text-center">
-        <a routerLink="/experiencia">
-          <h1>
-            <i
-              class="bi bi-chevron-compact-right text-rojo bg-negro action-btn"
-            ></i>
-          </h1>
-        </a>
+
       </div>
     </div>
 
+    <!-- Navegación >  -->
+    <div class="col-sm-1 text-center">
+      <a routerLink="/skills">
+        <h1>
+          <i
+            class="bi bi-chevron-compact-right text-rojo bg-negro action-btn"
+          ></i>
+        </h1>
+      </a>
+    </div>
   </div>
 
 </section>

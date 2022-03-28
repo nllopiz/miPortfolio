@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRouting } from './app-routing/app-routing.module';
 import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
 
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,13 @@ import { PageNotFoundComponent } from './componentes/page-not-found/page-not-fou
     SkillsComponent,
     ProyectosComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRouting
+    AppRouting,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
