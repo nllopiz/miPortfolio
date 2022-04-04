@@ -18,7 +18,7 @@
             "descripcion": "Descripción de las actividades "
         },
         {
-            "titulo": "Título del Puesto 2",
+            "titulo": "Título del Puesto 3",
             "periodo": "Desde - Hasta",
             "logo": "Logo",
             "descripcion": "Descripción de las actividades "
@@ -26,7 +26,7 @@
     ],
     "formacion": [
         {
-            "titulo": "Título 1",
+            "titulo": "Título 10",
             "periodo": "Desde - Hasta",
             "logo": "Logo",
             "descripcion": "Descripción de las actividades "
@@ -47,50 +47,44 @@
     "skills": [
         {
             "skill": "Skill 1",
-            "porcentaje1": "70",
-            "porcentaje2": "30"
+            "porcentaje": [80, 20]
         },
         {
             "skill": "Skill 2",
-            "porcentaje1": "65",
-            "porcentaje2": "35"
+            "porcentaje": [75, 25]
         },
         {
             "skill": "Skill 3",
-            "porcentaje1": "70",
-            "porcentaje2": "30"
+            "porcentaje": [60,40]
         },
         {
             "skill": "Skill 4",
-            "porcentaje1": "50",
-            "porcentaje2": "50"
+            "porcentaje": [50,50]
         },
         {
             "skill": "Skill 5",
-            "porcentaje1": "55",
-            "porcentaje2": "45"
+            "porcentaje": [35,65]
         },
         {
             "skill": "Skill 6",
-            "porcentaje1": "50",
-            "porcentaje2": "70"
+            "porcentaje": [20,80]
         }
     ],
     "proyectos": [
         {
             "titulo": "Título del Proyecto 1",
-            "logo": "Logo",
-            "descripcion": "Descripción de las actividades "
+            "imagen": "Imagen 1",
+            "descripcion": "Descripción del Proyecto 1 "
         },
         {
             "titulo": "Título del Proyecto 2",
-            "logo": "Logo",
-            "descripcion": "Descripción de las actividades "
+            "imagen": "Imagen 2",
+            "descripcion": "Descripción del Proyecto 2"
         },
         {
-            "titulo": "Título del Proyecto 2",
-            "logo": "Logo",
-            "descripcion": "Descripción de las actividades "
+            "titulo": "Título del Proyecto 3",
+            "imagen": "Imagen 3",
+            "descripcion": "Descripción del Proyecto 3"
         }
     ]
 }

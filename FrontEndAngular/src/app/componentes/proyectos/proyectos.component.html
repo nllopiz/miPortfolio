@@ -31,11 +31,12 @@
           sección con imágenes de los proyectos
         </p>
       </div>
+
       <!--Proyecto 1-->
-      <div class="row">
+      <div class="row" *ngFor="let proyecto of misdatos.proyectos">
         <!--Título y botón editar-->
         <div class="d-flex align-items-star">
-          <h3 class="d-inline">Proyecto 1</h3>
+          <h3 class="d-inline">{{ proyecto.titulo }}</h3>
           <a href="#experiencia" onclick="editarProyecto()"
             ><span class="badge bg-negro text-rojo ms-4 action-btn"
               ><i class="bi bi-pencil"></i></span
@@ -46,52 +47,10 @@
           ></a>
         </div>
         <div class="col-2 text-center">
-          <p>Captura de pantalla</p>
+          <p>{{ proyecto.imagen }}</p>
         </div>
         <div class="col-10">
-          <p>Descripción del proyecto</p>
-        </div>
-      </div>
-      <!--Proyecto 2-->
-      <div class="row">
-        <!--Título y botón editar-->
-        <div class="d-flex align-items-star">
-          <h3 class="d-inline">Proyecto 2</h3>
-          <a href="#experiencia" onclick="editarProyecto()"
-            ><span class="badge bg-negro text-rojo ms-4 action-btn"
-              ><i class="bi bi-pencil"></i></span
-          ></a>
-          <a href="#experiencia" onclick="eliminarProyecto()"
-            ><span class="badge bg-negro text-rojo ms-2 action-btn"
-              ><i class="bi bi-x-lg"></i></span
-          ></a>
-        </div>
-        <div class="col-2 text-center">
-          <p>Captura de pantalla</p>
-        </div>
-        <div class="col-10">
-          <p>Descripción del proyecto</p>
-        </div>
-      </div>
-      <!--Proyecto 1-->
-      <div class="row">
-        <!--Título y botón editar-->
-        <div class="d-flex align-items-star">
-          <h3 class="d-inline">Proyecto 3</h3>
-          <a href="#experiencia" onclick="editarProyecto()"
-            ><span class="badge bg-negro text-rojo ms-4 action-btn"
-              ><i class="bi bi-pencil"></i></span
-          ></a>
-          <a href="#experiencia" onclick="eliminarProyecto()"
-            ><span class="badge bg-negro text-rojo ms-2 action-btn"
-              ><i class="bi bi-x-lg"></i></span
-          ></a>
-        </div>
-        <div class="col-2 text-center">
-          <p>Captura de pantalla</p>
-        </div>
-        <div class="col-10">
-          <p>Descripción del proyecto</p>
+          <p>{{ proyecto.descripcion }}</p>
         </div>
       </div>
     

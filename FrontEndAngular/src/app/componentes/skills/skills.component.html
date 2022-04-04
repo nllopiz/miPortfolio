@@ -16,15 +16,9 @@
 		<!-- Contenido -->
     <div class="col-sm-10 align-items-center">
       <div class="row">
-        <!--Título y botón editar-->
-        <div class="d-flex align-items-star">
-          <h1 class="d-inline">Skills</h1>
-          <a href="#skills" onclick="editarSobreMi()"
-            ><span class="badge bg-negro text-rojo ms-4"
-              ><i class="bi bi-pencil"></i></span
-          ></a>
-        </div>
+        <!-- Título -->
         <div>
+          <h1 class="d-inline">Skills</h1>
           <p>
             Con una forma de visualización atractiva (por ejemplo: porcentajes)
             mostrarás tu grado de dominio de habilidades duras y blandas. Podés
@@ -32,38 +26,36 @@
           </p>
         </div>
 
-        <!-- Donut Chart 1 HTML5 / CSS3-->
-        <div class="col col-sm-6 col-md-4">
+        <!-- Donut Charts-->
+        <div class="col col-sm-6 col-md-4" *ngFor="let item of graficoChartDataSet; let i=index">
+          
+          <div class="d-flex justify-content-end mb-2">
+            <a href="#sobreMi" onclick="editar(editarSobreMi)"
+              ><span class="badge bg-negro text-rojo action-btn"
+                ><i class="bi bi-pencil"></i></span
+            ></a>
+          </div>
+
           <div class="card shadow border-negro bg-transparent text-white mb-4">
             <!-- Card Body -->
             <div class="card-body">
 							<canvas
 								baseChart
-								[data]="skillsData"
+								[datasets]="[item]"
 								[type]="'doughnut'"
-								[options]="chartOptions"
+								[options]="graficoChartOptions"
 							>
 							</canvas>
 						</div>
             <!-- Card Footer -->
             <div class="card-header bg-transparent border-negro py-2">
               <h6 class="m-0 font-weight-bold text-white text-center">
-                HTML5 / CSS3
+                {{ graficoChartLabels[i] }}
               </h6>
             </div>
           </div>
         </div>
-
-        <!-- Donut Chart 2 -->
-
-				<!-- Donut Chart 3 -->
-
-				<!-- Donut Chart 4 -->
-
-				<!-- Donut Chart 5 -->
-
-				<!-- Donut Chart 6 -->
-        
+                
       </div>
     </div>
 

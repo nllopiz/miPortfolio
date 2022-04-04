@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartData, ChartOptions } from 'chart.js';
+import { ChartData, ChartDataset, ChartOptions, ChartType } from 'chart.js';
+import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 
 
 @Component({
@@ -9,11 +10,23 @@ import { ChartData, ChartOptions } from 'chart.js';
 })
 export class SkillsComponent implements OnInit {
 
-  skillsData: ChartData<'doughnut'> = {
+  public misdatos: any;
+
+/*  public chartOptions: ChartOptions = {
+      responsive: true,
+      plugins: {
+        title: {
+          display: false,
+          text: 'HTML'
+        },
+      },
+    };
+
+  public skillsData: ChartData<'doughnut'> = {
     labels: [],
     datasets: [{
       label: 'HTML', 
-      data: [75, 25],
+      data: [70,30],
       backgroundColor: [
         '#E31B25',
         '#1C1C1C'
@@ -24,20 +37,30 @@ export class SkillsComponent implements OnInit {
     borderWidth: 1
     }],
   };
+*/
 
-  chartOptions: ChartOptions = {
-    responsive: true,
-    plugins: {
-      title: {
-        display: false,
-        text: 'HTML Title'
-      },
-    },
-  };
-
-  constructor() { }
+  graficoChartOptions: ChartOptions = {responsive: true};
+  graficoChartType: ChartType = 'doughnut';
+  graficoChartDataSet: ChartDataset[] = [];
+  graficoChartLabels: String[] = [];
+  
+  constructor(private datosPortfolio: DatosPorfolioService) {
+    this.datosPortfolio.obtenerDatos().subscribe(data => {
+      this.misdatos = data;
+      for (const porc of this.misdatos.skills) {
+        this.graficoChartDataSet.push ({data: porc.porcentaje});
+        this.graficoChartLabels.push(porc.skill)
+      }
+      //console.log(this.graficoChartDataSet);
+      //console.log(this.graficoChartLabels);
+    });
+   }
 
   ngOnInit(): void {
+    
   }
 
+  
+
+  
 }
