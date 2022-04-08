@@ -1,71 +1,75 @@
 <section class="container text-light" name="proyectos">
-
+  
 	<div class="row align-items-center">
+  	
+		<!-- Navegación <  -->
+		<div class="col-sm-1 text-center">
+      <a routerLink="/skills">
+        <h1>
+          <i
+            class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
+	        ></i>
+        </h1>
+      </a>
+    </div>
 
-	<!-- Navegación <  -->
-  <div class="col-sm-1 text-center">
-    <a routerLink="/skills">
-      <h1>
-        <i class="bi bi-chevron-compact-left text-rojo bg-negro action-btn"></i>
-      </h1>
-    </a>
-  </div>
-
-  <!-- Contenido -->
-  <div class="col-sm-10 align-items-center">
-
-      <!--Título y botón editar-->
-      <div class="d-flex align-items-star">
-        <h1 class="d-inline">Proyectos</h1>
-        <a href="#proyectos" onclick="editarProyectos()"
-          ><span class="badge bg-negro text-rojo ms-4 action-btn"
-            ><i class="bi bi-pencil"></i></span
-        ></a>
-      </div>
-      <div>
-        <p>
-          En esta sección deberá encontrarse la información sobre los proyectos
-          que desarrollaste o en que te involucraste, incluyendo este portfolio
-          web. Cada proyecto deberá contener el nombre, fecha de realización,
-          descripción y el link a su evidencia. Además, podés ilustrar esta
-          sección con imágenes de los proyectos
-        </p>
-      </div>
-
-      <!--Proyecto 1-->
-      <div class="row" *ngFor="let proyecto of misdatos.proyectos">
-        <!--Título y botón editar-->
+		<!-- Contenido -->
+    <div class="col col-sm-10 d-flex align-items-center">
+      <div class="row mx-sm-5">
+        <!-- Título -->
         <div class="d-flex align-items-star">
-          <h3 class="d-inline">{{ proyecto.titulo }}</h3>
-          <a href="#experiencia" onclick="editarProyecto()"
-            ><span class="badge bg-negro text-rojo ms-4 action-btn"
-              ><i class="bi bi-pencil"></i></span
-          ></a>
-          <a href="#experiencia" onclick="eliminarProyecto()"
-            ><span class="badge bg-negro text-rojo ms-2 action-btn"
-              ><i class="bi bi-x-lg"></i></span
-          ></a>
+          <h1 class="d-inline">Proyectos</h1>
         </div>
-        <div class="col-2 text-center">
-          <p>{{ proyecto.imagen }}</p>
-        </div>
-        <div class="col-10">
-          <p>{{ proyecto.descripcion }}</p>
+
+        <!-- Lista de puestos-->
+        <div id="listaPuestos" *ngFor="let proyecto of misdatos.proyectos" class="mx-sm-5">
+          <!--Puesto-->
+          <div class="row my-3">
+            <!-- Título y botones edición -->
+            <div class="d-flex align-items-star">
+              <div class="col-9">
+                <h4>{{ proyecto.titulo }}</h4>
+              </div>
+              <div class="col-3 d-flex justify-content-end">
+                <a href="#" onclick=""
+                ><span class="badge bg-negro text-rojo action-btn"
+                  ><i class="bi bi-pencil"></i></span
+                ></a>
+                <a href="#" onclick=""
+                  ><span class="badge bg-negro text-rojo ms-1 action-btn"
+                    ><i class="bi bi-x-lg"></i></span
+                ></a>
+              </div>
+            </div>
+            <div>
+              <h6 class="lead">{{ proyecto.periodo }}</h6>
+            </div>
+            <div class="col-3 col-sm-2 d-flex justify-content-center align-items-center">
+              <img src= '{{ proyecto.imagen }}' width="100%" alt="">
+            </div>
+            <div class="col-9 col-sm-10 d-flex align-items-center">
+              <div class="row">
+                <span>{{ proyecto.descripcion }}</span>
+              <span class="d-block"><a href="{{ proyecto.link }}" target="">Ver Sitio</a></span>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </div>
-    
-  </div>
+    </div>
+		
+		<!-- Navegación >  -->
+		<div class="col-sm-1 text-center">
+			<a routerLink="/intereses">
+				<h1>
+					<i
+						class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
+					></i>
+				</h1>
+			</a>
+		</div>
 
-  <!-- Navegación >  -->
-  <div class="col-sm-1 text-center">
-    <a routerLink="/acerca-de">
-      <h1>
-        <i
-          class="bi bi-chevron-compact-right text-rojo bg-negro action-btn"
-        ></i>
-      </h1>
-    </a>
-  </div>
-</div>
+	</div>
 
 </section>

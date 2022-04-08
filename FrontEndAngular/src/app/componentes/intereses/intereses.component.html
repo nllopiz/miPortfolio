@@ -1,8 +1,8 @@
-<section class="container text-light" name="educacion">
+<section class="container text-light" name="intereses">
   <div class="row align-items-center">
     <!-- Navegación <  -->
     <div class="col-sm-1 text-center">
-      <a routerLink="/experiencia">
+      <a routerLink="/proyectos">
         <h1>
           <i
             class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
@@ -11,44 +11,49 @@
       </a>
     </div>
 
-    <!-- Contenido  -->
+    <!-- Contenido -->
     <div class="col col-sm-10 align-items-center">
       <div class="row mx-sm-5">
         <!-- Título -->
         <div class="d-flex align-items-star">
-          <h1 class="d-inline">Formación</h1>
+          <h1 class="d-inline">Intereses</h1>
         </div>
 
-        <!-- Lista de capacitaciones -->
-        <div id="listaFormacion" *ngFor="let formacion of misdatos.formacion" class="mx-sm-5">
+        <!-- Lista de intereses-->
+        <div
+          id="listIntereses"
+          *ngFor="let interes of misdatos.intereses"
+          class="mx-sm-5"
+        >
           <!--Puesto-->
           <div class="row my-3">
-            <!--Título y botones edición -->
+            <!-- Título y botones edición -->
             <div class="d-flex align-items-star">
               <div class="col-9">
-                <h4>{{ formacion.titulo }}</h4>
+                <h4>{{ interes.titulo }}</h4>
               </div>
               <div class="col-3 d-flex justify-content-end">
-                <a href="#" onclick="editarPuesto()"
-                ><span class="badge bg-negro text-rojo ms-4 action-btn"
-                  ><i class="bi bi-pencil"></i></span
+                <a href="#" onclick=""
+                  ><span class="badge bg-negro text-rojo action-btn"
+                    ><i class="bi bi-pencil"></i></span
                 ></a>
-                <a href="#" onclick="eliminarPuesto()"
-                  ><span class="badge bg-negro text-rojo ms-2 action-btn"
+                <a href="#" onclick=""
+                  ><span class="badge bg-negro text-rojo ms-1 action-btn"
                     ><i class="bi bi-x-lg"></i></span
                 ></a>
-              </div>              
+              </div>
             </div>
             <div>
-              <h6 class="lead">{{ formacion.periodo }}</h6>
+              <h6 class="lead">{{ interes.periodo }}</h6>
             </div>
-            <div class="col-3 col-sm-2 d-flex justify-content-center align-items-center">
-              <img src= '{{ formacion.logo }}'  width="100%" alt="">
+            <div
+              class="col-3 col-sm-2 d-flex justify-content-center align-items-center"
+            >
+              <img src="{{ interes.logo }}" width="100%" alt="" />
             </div>
             <div class="col-9 col-sm-10 d-flex align-items-center">
-              <span>{{ formacion.descripcion }}</span>
+              <span>{{ interes.descripcion }}</span>
             </div>
-            <!-- <p>drag and drop https://youtu.be/-N515SDoYuU</p> -->
           </div>
         </div>
       </div>
@@ -56,7 +61,7 @@
 
     <!-- Navegación >  -->
     <div class="col-sm-1 text-center">
-      <a routerLink="/skills">
+      <a routerLink="/acerca-de">
         <h1>
           <i
             class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
@@ -65,5 +70,4 @@
       </a>
     </div>
   </div>
-
 </section>

@@ -7,48 +7,48 @@
       <a routerLink="/acerca-de">
         <h1>
           <i
-            class="bi bi-chevron-compact-left text-rojo bg-negro action-btn"
+            class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
 	        ></i>
         </h1>
       </a>
     </div>
 
 		<!-- Contenido -->
-    <div class="col-sm-10 align-items-center">
-      <div class="row">
-        <!--Título y botón editar-->
+    <div class="col col-sm-10 align-items-center">
+      <div class="row mx-sm-5">
+        <!-- Título -->
         <div class="d-flex align-items-star">
           <h1 class="d-inline">Experiencia</h1>
-          <a href="#experiencia" onclick="editarExperiencia()"
-            ><span class="badge bg-negro text-rojo ms-4 action-btn"
-              ><i class="bi bi-pencil"></i></span
-          ></a>
         </div>
 
         <!-- Lista de puestos-->
-        <div id="listaPuestos" *ngFor="let puesto of misdatos.experiencia">
-          <!--Puesto1-->
-          <div class="row my-2">
-            <!--Título y botón editar-->
+        <div id="listaPuestos" *ngFor="let puesto of misdatos.experiencia" class="mx-sm-5">
+          <!--Puesto-->
+          <div class="row my-3">
+            <!-- Título y botones edición -->
             <div class="d-flex align-items-star">
-              <h3 class="d-inline">{{ puesto.titulo }}</h3>
-              <a href="#experiencia" onclick="editarPuesto()"
-                ><span class="badge bg-negro text-rojo ms-4 action-btn"
+              <div class="col-9">
+                <h4>{{ puesto.titulo }}</h4>
+              </div>
+              <div class="col-3 d-flex justify-content-end">
+                <a href="#" onclick=""
+                ><span class="badge bg-negro text-rojo action-btn"
                   ><i class="bi bi-pencil"></i></span
-              ></a>
-              <a href="#experiencia" onclick="eliminarPuesto()"
-                ><span class="badge bg-negro text-rojo ms-2 action-btn"
-                  ><i class="bi bi-x-lg"></i></span
-              ></a>
+                ></a>
+                <a href="#" onclick=""
+                  ><span class="badge bg-negro text-rojo ms-1 action-btn"
+                    ><i class="bi bi-x-lg"></i></span
+                ></a>
+              </div>
             </div>
             <div>
-              <h5>{{ puesto.periodo }}</h5>
+              <h6 class="lead">{{ puesto.periodo }}</h6>
             </div>
-            <div class="col-2 text-center">
-              <p>{{ puesto.logo }}</p>
+            <div class="col-3 col-sm-2 d-flex justify-content-center align-items-center">
+              <img src= '{{ puesto.logo }}' width="100%" alt="">
             </div>
-            <div class="col-10">
-              <p>{{ puesto.descripcion }}</p>
+            <div class="col-9 col-sm-10 d-flex align-items-center">
+              <span>{{ puesto.descripcion }}</span>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
 			<a routerLink="/formacion">
 				<h1>
 					<i
-						class="bi bi-chevron-compact-right text-rojo bg-negro action-btn"
+						class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
 					></i>
 				</h1>
 			</a>

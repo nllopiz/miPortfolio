@@ -8,6 +8,7 @@ import { ExperienciaComponent } from '../componentes/experiencia/experiencia.com
 import { SkillsComponent } from '../componentes/skills/skills.component';
 import { ProyectosComponent } from '../componentes/proyectos/proyectos.component';
 import { PageNotFoundComponent } from '../componentes/page-not-found/page-not-found.component';
+import { InteresesComponent } from '../componentes/intereses/intereses.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'experiencia', component:ExperienciaComponent},
   {path: 'skills', component:SkillsComponent},
   {path: 'proyectos', component:ProyectosComponent},
+  {path: 'intereses', component:InteresesComponent},
   {path: '', redirectTo: 'acerca-de', pathMatch: 'full'},
   {path: '**', component:PageNotFoundComponent}
 

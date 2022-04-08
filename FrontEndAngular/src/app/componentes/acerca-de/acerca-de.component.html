@@ -4,9 +4,9 @@
 		
 		<!-- Contenido -->
     <div class="col-sm-11">
-      <div class="row">
+      <div class="row d-flex justify-content-center">
         <div class="col-sm-3">
-          <div id="miFoto">
+          <div>
             <!--botón editar-->
             <div class="d-flex justify-content-end">
               <a href="#sobreMi" onclick="editarfoto()"
@@ -15,16 +15,13 @@
               ></a>
             </div>
             <div class="text-center p-2">
-              <img src="../../assets/images/yo.png" alt="" width="150" />
-              <p id="miNombre" class="lead">
-                {{ misdatos.nombre }}<br />
-                {{ misdatos.titulo }}<br />{{ misdatos.ubicacion }}
-              </p>
+              <img src="../../assets/images/yo.png" id="miFoto" alt="" width="100%" />
+              
             </div>
           </div>
         </div>
 
-        <div class="col-sm-8 justify-content-center">
+        <div class="col-sm-8 d-flex justify-content-center align-items-center">
           <div class="row pt-2">
             <!--Título y botón editar-->
             <div class="d-flex justify-content-end">
@@ -33,17 +30,19 @@
                   ><i class="bi bi-pencil"></i></span
               ></a>
             </div>
-            <div>
-              <h1>Sobre mí</h1>
+            <div class="text-center">
+              <h1>{{ misdatos.nombre }}</h1>
+              <p id="miNombre" class="lead">
+                {{ misdatos.titulo }}<br />{{ misdatos.ubicacion }}
+              </p>
             </div>
 
             <div class="">
+<!--
+  Información profesional resumida (con botón de edición)
+-->
               <p id="textoSobreMi">
-                Información profesional resumida <br />(con botón de edición y/o
-                eliminar) <br />Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Optio quos mollitia earum tempora repellendus
-                ab deleniti sunt quo repellat beatae illo facilis ullam numquam
-                sint vel reiciendis, magni iste. Non!
+                {{ misdatos.sobreMi }}
               </p>
               <div id="editarSobreMi" class="d-none">
                 <textarea

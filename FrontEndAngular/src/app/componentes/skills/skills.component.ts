@@ -43,6 +43,7 @@ export class SkillsComponent implements OnInit {
   graficoChartType: ChartType = 'doughnut';
   graficoChartDataSet: ChartDataset[] = [];
   graficoChartLabels: String[] = [];
+  graficoChartBgColor: String[] = ['#E31B25', '#1C1C1C'];
   
   constructor(private datosPortfolio: DatosPorfolioService) {
     this.datosPortfolio.obtenerDatos().subscribe(data => {

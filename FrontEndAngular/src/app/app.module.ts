@@ -15,6 +15,7 @@ import { AppRouting } from './app-routing/app-routing.module';
 import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
 
 import { NgChartsModule } from 'ng2-charts';
+import { InteresesComponent } from './componentes/intereses/intereses.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NgChartsModule } from 'ng2-charts';
     ProyectosComponent,
     FooterComponent,
     PageNotFoundComponent,
+    InteresesComponent,
   ],
   imports: [
     BrowserModule,
