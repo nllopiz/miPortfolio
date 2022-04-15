@@ -1,138 +1,161 @@
 {
-    "nombre": "Norberto Llopiz",
-    "foto": "",
-    "titulo": "Full Stack Developper Jr",
+    "id": "1",   
+    "apellido":"Llopiz",
+    "nombre": "Norberto",
+    "foto": "/assets/images/yo.png",
+    "titulo": "Full Stack Developer Jr",
     "ubicacion":"Mendoza - Argentina",
-    "sobreMi": "",
+    "sobreMi": "Soy Licenciado en Sistemas, me dedico a brindar soluciones informáticas",
     "experiencia": [
         {
+            "id": "1",   
             "titulo": "Jefe de Informática",
-            "periodo": "Abril 2020 - Hasta Hoy",
+            "periodo": "Abr 2020 - continúa",
             "logo": "/assets/images/LogoHospital50.png",
             "descripcion": "Hospital Regional Diego Paroissien. Desarrollo de Sitio Web de Consulta de Camas Disponibles, Cronograma de Quirófanos y Otros. HTML, CSS, PHP, MySQL"
         },
         {
+            "id": "2",
             "titulo": "Wordpress Freelance",
-            "periodo": "2016 - Hoy",
+            "periodo": "2016 - 2019",
             "logo": "/assets/images/logoWordpress.png",
-            "descripcion": "Sitios Web con Wordpress: Coro de la Ciudad de Mendoza, Clínica Mira, Viviendas el Trebol"
+            "descripcion": "Sitios Web con Wordpress: Coro de la Ciudad de Mendoza, Clínica Mira, Viviendas el Trébol. Sitio Web con Google Sites: Aleksei Abutkov"
         },
         {
+            "id": "3",
             "titulo": "Administrador de Sistemas",
             "periodo": "Set 2006 - Abr 2020",
             "logo": "/assets/images/logoGobMza.png",
-            "descripcion": "Administración de Servidores. Administración del Sitio Web www.desarrollosocial.mendoza.gov.ar, en Joomla y luego Wordpress. Líder de Proyecto de Implementación del sistema Gestión Documental Eléctrónica."
+            "descripcion": "Administración de Servidores. Administración del Sitio Web www.desarrollosocial.mendoza.gov.ar, en Joomla y luego Wordpress. Líder de Proyecto de Implementación del sistema Gestión Documental Electrónica."
         },
         {
+            "id": "4",
             "titulo": "Capacitador Microsoft Excel y Access, Google Apps",
             "periodo": "May 2005 - Nov 2014",
             "logo": "/assets/images/logoExcel.png",
             "descripcion": "Dicté cursos de Excel y Access en Centro de Capacitación de Extensión Universitaria de la UTN Regional Mendoza, y en Educación Mendoza Training Center. También dicté el curso de Google Apps al personal de la Bodega Monteviejo."
         },
         {
+            "id": "5",
             "titulo": "Profesor de Informática",
             "periodo": "Mar 1997 - Jun 2008",
             "logo": "/assets/images/logoEscuela.png",
-            "descripcion": "Fui profe de Informática en Colegio Universitario del Aconcagua, Instituo Nadino (primaria y secundaria), Instituto Terciario Nuevo Cuyo e Instituto de la Sanidad"
+            "descripcion": "Fui profe de Informática en Colegio Universitario del Aconcagua, Instituto Nadino (primaria y secundaria), Instituto Terciario Nuevo Cuyo e Instituto de la Sanidad"
         }
     ],
     "formacion": [
-        
         {
+            "id": "1",
             "titulo": "Full Stack Angular, Java, Spring Boot, MySQL, Dev Ops",
             "periodo": "Nov 2021 - May 2022",
             "logo": "/assets/images/logoArgentinaPrograma.png",
             "descripcion": "Argentina Programa - Modalidad: A distancia - 360 hs."
         },
         {
+            "id": "2",
             "titulo": "Especialización en Desarrollo Mobile",
             "periodo": "Set - Nov 2021",
             "logo": "/assets/images/logoCaC.jpg",
             "descripcion": "Codo a Codo 4.0 - Buenos Aires Ciudad. UX/UI, React Native, MongoDB, NodeJS - Modalidad: A distancia Autoasistido - 60 hs."
         },
         {
-            "titulo": "Full Stack HTML, CSS, Javascript, PHP, MySQL",
+            "id": "3",
+            "titulo": "Full Stack HTML, CSS, JavaScript, PHP, MySQL",
             "periodo": "Ago - Dic 2020",
             "logo": "/assets/images/logoCaC.jpg",
             "descripcion": "Codo a Codo 4.0 - Buenos Aires Ciudad. Modalidad: A distancia - 66 hs."
         },
         {
+            "id": "4",
             "titulo": "Administración de Bases de Datos Relacionales con ORACLE",
             "periodo": "Mar - Ago 2010",
             "logo": "/assets/images/logoUtn.jpg",
             "descripcion": "U.T.N. Regional Mendoza - Proydesa - Becas Control+F. Oracle 9i DBA Niveles Inicial, Intermedio y Avanzado. 240 hs."
         },
         {
+            "id": "5",
             "titulo": "Microsoft Certified System Administrator",
             "periodo": "Set 2005",
             "logo": "/assets/images/logoExo.jpg",
             "descripcion": "EXO Training Center - Buenos Aires. Administración de Servidores con Windows 2003 Server, clientes Windows XP e ISA Server 2000. Fast Track 120 hs."
         },
         {
+            "id": "6",
             "titulo": "Licenciado en Sistemas de Información",
             "periodo": "1992 - 1999",
             "logo": "/assets/images/logoUM.jpg",
             "descripcion": "Facultad de Ingeniería - Universidad de Mendoza"
         },
         {
+            "id": "7",
             "titulo": "Bachiller y Perito Mercantil",
             "periodo": "1985 - 1990",
             "logo": "/assets/images/logoSTA.png",
             "descripcion": "Colegio Santo Tomás de Aquino. Primer escolta de Bandera Nacional"
         },
         {
+            "id": "8",
             "titulo": "Nivel Primario",
             "periodo": "1977 - 1984",
             "logo": "/assets/images/logoNadino.png",
             "descripcion": "Instituto Nadino. Abanderado Bandera Nacional"
         }
-        
-
     ],
-    "skills": [
+    "habilidades": [
         {
-            "skill": "HTML5",
-            "porcentaje": [80, 20]
+            "id": "1",
+            "nombre": "HTML5",
+            "porcentaje": [80,20]
         },
         {
-            "skill": "CSS3",
-            "porcentaje": [70, 30]
+            "id": "2",
+            "nombre": "CSS3",
+            "porcentaje": [70,30]
         },
         {
-            "skill": "Javascript",
+            "id": "3",
+            "nombre": "JavaScript",
             "porcentaje": [60,40]
         },
         {
-            "skill": "PHP",
+            "id": "4",
+            "nombre": "PHP",
             "porcentaje": [50,50]
         },
         {
-            "skill": "MySQL",
-            "porcentaje": [35,65]
+            "id": "5",
+            "nombre": "MySQL",
+            "porcentaje": [60,40]
         },
         {
-            "skill": "Angular",
+            "id": "6",
+            "nombre": "Angular",
+            "porcentaje": [30,70]
+        },
+        {
+            "id": "7",
+            "nombre": "Java",
             "porcentaje": [20,80]
         },
         {
-            "skill": "Java",
+            "id": "8",
+            "nombre": "Spring Boot",
             "porcentaje": [20,80]
         },
         {
-            "skill": "Spring Boot",
+            "id": "9",
+            "nombre": "Dev Ops",
             "porcentaje": [20,80]
         },
         {
-            "skill": "Dev Ops",
-            "porcentaje": [20,80]
-        },
-        {
-            "skill": "React Native",
-            "porcentaje": [20,80]
+            "id": "10",
+            "nombre": "React Native",
+            "porcentaje": [30,70]
         }
     ],
     "proyectos": [
         {
+            "id": "1",
             "titulo": "Mi Portfolio Web",
             "imagen": "/assets/images/imgPortfolio.jpg",
             "descripcion": "Angular, Java, Spring Boot, MySQL, Dev Ops",
@@ -140,6 +163,7 @@
             "github": ""
         },
         {
+            "id": "2",
             "titulo": "Información Asistencial",
             "imagen": "/assets/images/imgCamas.jpg",
             "descripcion": "HTML5, CSS3, Bootstrap, PHP, Lectura de tablas DBF de un sistema Visual Fox.",
@@ -147,6 +171,7 @@
             "github": ""
         },
         {
+            "id": "3",
             "titulo": "Marcaciones del Personal",
             "imagen": "/assets/images/imgMarcaciones.jpg",
             "descripcion": "HTML5, CSS3, Bootstrap, PHP, Lectura de archivo Access.",
@@ -154,13 +179,15 @@
             "github": ""
         },
         {
-            "titulo": "Viviendas el Trebol",
+            "id": "4",
+            "titulo": "Viviendas El Trébol",
             "imagen": "/assets/images/imgTrebol.jpg",
             "descripcion": "Wordpress",
-            "link": "http://www.eltrebolviviendas.com.ar/",
+            "link": "http://www.eltrebolviviendas.com.ar",
             "github": ""
         },
         {
+            "id": "5",
             "titulo": "Coro de la Ciudad de Mendoza",
             "imagen": "/assets/images/imgCoro.jpg",
             "descripcion": "Wordpress",
@@ -168,52 +195,80 @@
             "github": ""
         },
         {
+            "id": "6",
             "titulo": "Clínica Mira",
             "imagen": "/assets/images/imgCMira.jpg",
             "descripcion": "Wordpress",
-            "link": "https://clinicamira.com.ar/",
+            "link": "https://clinicamira.com.ar",
             "github": ""
         },
         {
+            "id": "7",
             "titulo": "Desarrollo Social - Gobierno de Mendoza",
             "imagen": "/assets/images/imgDSocial.jpg",
             "descripcion": "Wordpress",
             "link": "https://www.mendoza.gov.ar/desarrollosocial/",
             "github": ""
+        },
+        {
+            "id": "8",
+            "titulo": "EDICIÓN CRÍTICA DE LAS OBRAS DE ALEKSEI ABUTKOV. Facultad de Artes y Diseño, Universidad Nacional de Cuyo",
+            "imagen": "",
+            "descripcion": "Google Sites",
+            "link": "https://sites.google.com/view/aleksei-abutkov/inicio",
+            "github": ""
         }
     ],
     "idiomas": [
         {
-            "titulo": "Inglés",
-            "imagen": "Imagen 1",
-            "descripcion": "4 años en el colegio secundario, 2 años intesivos en Instituo. Inglés técnico en la facultad. Leo bien, hablo regular"
+            "id": "1",
+            "nombre": "Inglés",
+            "imagen": "",
+            "descripcion": "4 años en el colegio secundario, 2 años intensivos en Instituto. Inglés técnico en la facultad. Leo bien, hablo regular"
         },
         {
-            "titulo": "Francés",
-            "imagen": "Imagen 3",
+            "id": "2",
+            "nombre": "Francés",
+            "imagen": "",
             "descripcion": "4 años en el colegio secundario"
         }
     ],
     "intereses": [
         {
-            "titulo": "Canto Coral",
-            "imagen": "Imagen 2",
-            "descripcion": "Integro el Coro de la Ciudad de Mendoza, con ensayos 2 veces por semana"
+            "id": "1",
+            "nombre": "Estudiar programación",
+            "imagen": "",
+            "descripcion": "Siempre se puede mejorar"            
         },
         {
-            "titulo": "Squash",
-            "imagen": "Imagen 1",
-            "descripcion": "Juego squash 1 o 2 veces por semana"
+            "id": "2",
+            "nombre": "Canto Coral",
+            "imagen": "",
+            "descripcion": "Integro el Coro de la Ciudad de Mendoza desde 2016"
+        },
+        {
+            "id": "3",
+            "nombre": "Squash",
+            "imagen": "",
+            "descripcion": "Juego con amigos 1 o 2 veces por semana"
         },        
         {
-            "titulo": "Fútbol con amigos",
-            "imagen": "Imagen 3",
-            "descripcion": "Los sábados, con mis amigos y sus hijos"
+            "id": "4",
+            "nombre": "Fútbol",
+            "imagen": "",
+            "descripcion": "Juego los sábados con mis amigos"
         },
         {
-            "titulo": "Viajes",
-            "imagen": "Imagen 2",
-            "descripcion": "Chile, Perú, Ecuador, Costa Rica, Cuba, España, Franca, Italia, Polonia, Rep. Checa, Eslovenia"
+            "id": "5",
+            "nombre": "Cine y series en familia",
+            "imagen": "",
+            "descripcion": "Con mi hija y mi pareja"
+        },
+        {
+            "id": "6",
+            "nombre": "Viajes",
+            "imagen": "",
+            "descripcion": "Chile, Perú, Ecuador, Costa Rica, Cuba, España, Francia, Italia, Polonia, República Checa, Eslovenia"
         }
     ]
 }

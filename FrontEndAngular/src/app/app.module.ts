@@ -6,7 +6,7 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { FormacionComponent } from './componentes/formacion/formacion.component';
-import { SkillsComponent } from './componentes/skills/skills.component';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
@@ -24,7 +24,7 @@ import { InteresesComponent } from './componentes/intereses/intereses.component'
     AcercaDeComponent,
     ExperienciaComponent,
     FormacionComponent,
-    SkillsComponent,
+    HabilidadesComponent,
     ProyectosComponent,
     FooterComponent,
     PageNotFoundComponent,
