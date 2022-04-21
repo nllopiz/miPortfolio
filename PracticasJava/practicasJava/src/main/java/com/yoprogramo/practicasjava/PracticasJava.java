@@ -8,7 +8,7 @@ package com.yoprogramo.practicasjava;
 //import java.util.Date;
 import java.util.Scanner; //para carga por teclado
 
-public class Practica0Java {
+public class PracticasJava {
 
     public static void main(String[] args) {
 
@@ -412,7 +412,7 @@ public class Practica0Java {
         }
         
         //mostrar promedios
-        System.out.print("\nPromedios: \n");
+        System.out.print("\nPromedios: ");
         for(int f=0;f<jugadores;f++) {
             System.out.print("\nPromedio de Goles del Jugador " + (f+1) + ": ");           
             System.out.print(promedios[f] + " ");
