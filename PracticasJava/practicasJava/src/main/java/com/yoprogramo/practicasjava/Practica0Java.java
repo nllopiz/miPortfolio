@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
-
 package com.yoprogramo.practicasjava;
 
 /**
  *
- * @author nllopiz
+ * @author Norberto Llopiz
  */
 
 import java.util.Date;
+import java.util.Scanner; //para carga por teclado
 
-public class PracticasJava {
+public class Practica0Java {
 
     public static void main(String[] args) {
+
+//**********************Práctica Teoría
+                
         System.out.println("Hello World!");
         
         //instancia del objeto Date
@@ -152,12 +151,59 @@ public class PracticasJava {
         metodoEscribirSaludo("Milagros");
         System.out.print("\nEl mínimo entre 10 y 20 es: " + minimo(10, 20));
         
+        //Arreglos
+        //Cargar un arreglo
+        System.out.println("\n\nArreglos");
+        //Vectores
+        System.out.println("\n\n   Vectores");
+        int numerosVector[] = new int[10];
+        for(int i = 0; i<10; i++){
+            numerosVector[i] = i+1;
+        }
+        //Leer un arreglo
+        for(int i = 0; i<10; i++){
+            System.out.print("Pos " + i + ": " + numerosVector[i] + "\n");
+            
+        }
+        //Matrices
+        System.out.println("\n\n   Matrices");
+        int numerosMatriz [][] = new int[3][3];
+        //Cargar Matriz
+        int k = 1;
+        for(int i = 0; i<3; i++){
+            for(int j = 0; j<3; j++){
+                numerosMatriz[i][j] = k;
+                k++;
+            }            
+        }
+        //Leer Matriz
+        for(int i = 0; i<3; i++){
+            for(int j = 0; j<3; j++){
+                System.out.print(numerosMatriz[i][j] + ", ");
+            }
+            System.out.print("\n");
+        }
         
-        
+        //Cargar Matriz con ayuda del usuario
+        Scanner teclado = new Scanner (System.in);
+        int matriz[][] = new int [3][3];
+        for(int i = 0; i<3; i++){
+            for(int j = 0; j<3; j++){
+                System.out.println("Ingrese un valor para la fila: " + i + " columna: " + j);
+                int tecla = teclado.nextInt();
+                matriz[i][j] = tecla;
+            }            
+        }
+        //Leer Matriz cargada
+        System.out.println("Los valores cangados son:");
+        for(int i = 0; i<3; i++){
+            for(int j = 0; j<3; j++){
+                System.out.print(matriz[i][j] + ", ");
+            }
+            System.out.print("\n");
+        }        
     }
 
-    //Métodos (siempre dentro de una clase)
-    //estamos dentro de la clase PracticasJava
         
     public static void metodoEscribirSaludo(String nombre) {
         System.out.print("Hola " + nombre);
@@ -172,4 +218,5 @@ public class PracticasJava {
         }
         return min;
     }
+
 }
