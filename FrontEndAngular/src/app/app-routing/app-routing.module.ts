@@ -9,9 +9,11 @@ import { HabilidadesComponent } from '../componentes/habilidades/habilidades.com
 import { ProyectosComponent } from '../componentes/proyectos/proyectos.component';
 import { PageNotFoundComponent } from '../componentes/page-not-found/page-not-found.component';
 import { InteresesComponent } from '../componentes/intereses/intereses.component';
+import { IniciarSesionComponent } from '../componentes/iniciar-sesion/iniciar-sesion.component';
 
 
 const routes: Routes = [
+  {path: 'iniciar-sesion', component:IniciarSesionComponent},
   {path: 'acerca-de', component:AcercaDeComponent},
   {path: 'formacion', component:FormacionComponent},
   {path: 'experiencia', component:ExperienciaComponent},
@@ -20,6 +22,7 @@ const routes: Routes = [
   {path: 'intereses', component:InteresesComponent},
   {path: '', redirectTo: 'acerca-de', pathMatch: 'full'},
   {path: '**', component:PageNotFoundComponent}
+  
 
 ];
 

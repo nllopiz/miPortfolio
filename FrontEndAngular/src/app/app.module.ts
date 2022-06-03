@@ -16,6 +16,8 @@ import { PageNotFoundComponent } from './componentes/page-not-found/page-not-fou
 
 import { NgChartsModule } from 'ng2-charts';
 import { InteresesComponent } from './componentes/intereses/intereses.component';
+import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { InteresesComponent } from './componentes/intereses/intereses.component'
     FooterComponent,
     PageNotFoundComponent,
     InteresesComponent,
+    IniciarSesionComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRouting,
-    NgChartsModule
+    NgChartsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
