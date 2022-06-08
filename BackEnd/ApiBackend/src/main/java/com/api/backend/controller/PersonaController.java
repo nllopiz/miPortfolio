@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +26,7 @@ public class PersonaController {
     @Autowired
     private IPersonaService personaService;    
     
-    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<PersonaDTO> crearPersona(@RequestBody PersonaDTO personaNuevaDTO){
         return new ResponseEntity<>(personaService.crearPersona(personaNuevaDTO), HttpStatus.CREATED);
@@ -40,8 +41,8 @@ public class PersonaController {
     public ResponseEntity<PersonaDTO> verPersonaPorId(@PathVariable(name = "id") long id){
         return ResponseEntity.ok(personaService.buscarPersonaPorId(id));
     }
-    
-    
+        
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<PersonaDTO> editarPersona(@RequestBody PersonaDTO datosNuevosPersonaDTO, @PathVariable(name = "id") long id){
         //PersonaDTO personaRespuesta = personaService.editarPersona(personaDTO, id);
@@ -50,7 +51,7 @@ public class PersonaController {
         return new ResponseEntity<>(personaService.crearPersona(personaBuscada), HttpStatus.OK);
     }
     
-    
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarPersona(@PathVariable(name = "id") long id){
         personaService.eliminarPersona(id);
