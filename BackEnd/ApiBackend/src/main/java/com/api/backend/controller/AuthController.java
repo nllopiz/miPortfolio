@@ -6,6 +6,8 @@ import com.api.backend.model.Rol;
 import com.api.backend.model.Usuario;
 import com.api.backend.repository.RolRepository;
 import com.api.backend.repository.UsuarioRepository;
+import com.api.backend.security.JwtAuthResponseDTO;
+import com.api.backend.security.JwtTokenProvider;
 import java.util.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,11 +41,17 @@ public class AuthController {
     @Autowired
     private PasswordEncoder passwordEncoder;
     
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
+    
     @PostMapping("/iniciarSesion")
-    public ResponseEntity<String> authenticateUser(@RequestBody LoginDTO loginDTO) {
+    public ResponseEntity<JwtAuthResponseDTO> authenticateUser(@RequestBody LoginDTO loginDTO) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new ResponseEntity<>("Ha iniciado sesión", HttpStatus.OK);
+        
+        //obtner el token
+        String token = jwtTokenProvider.generarToken(authentication);
+        return ResponseEntity.ok(new JwtAuthResponseDTO(token));
     }
     
     @PostMapping("/registrarUsuario")
