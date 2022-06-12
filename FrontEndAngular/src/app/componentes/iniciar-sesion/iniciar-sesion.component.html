@@ -1,15 +1,30 @@
 
 
-<form class="col-6 col-sm-3 mx-auto">
+<form [formGroup]="form" class="col-6 col-sm-3 mx-auto" (ngSubmit)="onEnviar($event)">
   <h1 class="text-light mx-auto">Login</h1>
   <div class="mb-3 form-outline form-white">
     <label for="exampleInputEmail1" class="form-label text-white">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    
+    <input type="email" formControlName="email" [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && !Email?.hasError('required')}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div *ngIf="Email?.errors && Email?.touched">
+      <p *ngIf="Email?.hasError('required')" class="text-warning">
+        <small><em>* El email es requerido.</em></small> 
+      </p>
+      <p *ngIf="Email?.hasError('email')" class="text-warning">
+        <small><em>* El formato del email no es válido.</em></small> 
+      </p>
+    </div>    
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label text-white">Contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" formControlName="password" [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && !Password?.errors?.['minlength']}" class="form-control" id="exampleInputPassword1">
+    <div *ngIf="Password?.errors && Password?.touched">
+      <p *ngIf="Password?.hasError('required')" class="text-warning">
+        <small><em>* La contraseña es requerida.</em></small> 
+      </p>
+      <p *ngIf="Password?.errors?.['minlength']" class="text-warning">
+        <small><em>* La contraseña debe ser de 8 o más caracteres.</em></small> 
+      </p>
+    </div>  
   </div>
   <button type="submit" class="btn bg-rojo text-light">Enviar</button>
 </form>
