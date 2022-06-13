@@ -18,8 +18,8 @@ export class AcercaDeComponent implements OnInit {
   ngOnInit(): void {
     //ejecutamos la función que trae los datos del servicio, y suscribimos al observable
     this.datosPorfolio.obtenerDatos().subscribe(data => {
-      //console.log(data);
-      this.misdatos=data;
+      console.log("Datos api: " + data);
+      this.misdatos=data[0];''
     });
   }
 

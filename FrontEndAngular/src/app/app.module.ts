@@ -10,7 +10,7 @@ import { HabilidadesComponent } from './componentes/habilidades/habilidades.comp
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRouting } from './app-routing/app-routing.module';
 import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
 
@@ -18,6 +18,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { InteresesComponent } from './componentes/intereses/intereses.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DatosPorfolioService } from './servicios/datos-porfolio.service';
+import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgChartsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    DatosPorfolioService,
+    { provide: HTTP_INTERCEPTORS, 
+      useClass: InterceptorService,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
