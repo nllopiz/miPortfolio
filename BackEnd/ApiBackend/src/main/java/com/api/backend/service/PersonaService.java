@@ -27,7 +27,10 @@ public class PersonaService implements IPersonaService {
         personaDTO.setTitulo(persona.getTitulo());
         personaDTO.setUbicacion(persona.getUbicacion());
         personaDTO.setSobreMi(persona.getSobreMi());
-//        personaDTO.setExperiencias(persona.getExperiencias());
+        personaDTO.setExperiencias(persona.getExperiencias());
+        personaDTO.setFormaciones(persona.getFormaciones());
+        personaDTO.setProyectos(persona.getProyectos());
+        personaDTO.setHabilidades(persona.getHabilidades());
         
         return personaDTO;
     }
@@ -44,7 +47,10 @@ public class PersonaService implements IPersonaService {
         personaNueva.setTitulo(personaNuevaDTO.getTitulo());
         personaNueva.setUbicacion(personaNuevaDTO.getUbicacion());
         personaNueva.setSobreMi(personaNuevaDTO.getSobreMi());
-//        personaNueva.setExperiencias(personaNuevaDTO.getExperiencias());
+        personaNueva.setExperiencias(personaNuevaDTO.getExperiencias());
+        personaNueva.setFormaciones((personaNuevaDTO.getFormaciones()));
+        personaNueva.setProyectos(personaNuevaDTO.getProyectos());
+        personaNueva.setHabilidades(personaNuevaDTO.getHabilidades());
         
         return personaNueva;        
     }

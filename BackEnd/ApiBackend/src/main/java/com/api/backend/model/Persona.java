@@ -1,16 +1,16 @@
 package com.api.backend.model;
 
-/*import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;*/
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -42,8 +42,8 @@ public class Persona implements Serializable {
     private String ubicacion;
     @Column(name = "sobreMi", nullable = false)
     private String sobreMi;
-    /*
-    @JsonBackReference //para solucionar errores de serialización
+
+    @JsonBackReference //para soluciona errores de serialización
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Experiencia> experiencias = new HashSet<>();
 
@@ -54,7 +54,11 @@ public class Persona implements Serializable {
     @JsonBackReference
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Proyecto> proyectos = new HashSet<>();
-    */
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Habilidad> habilidades = new HashSet<>();
+    
     public Persona(){
         
     }
@@ -69,5 +73,7 @@ public class Persona implements Serializable {
         this.ubicacion = ubicacion;
         this.sobreMi = sobreMi;
     }
+
+    
 
 }

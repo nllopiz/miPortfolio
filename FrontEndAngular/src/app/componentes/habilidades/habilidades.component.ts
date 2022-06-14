@@ -21,8 +21,9 @@ export class HabilidadesComponent implements OnInit {
   constructor(private datosPortfolio: DatosPorfolioService) {
     this.datosPortfolio.obtenerDatos().subscribe(data => {
       this.misdatos = data;
+      console.log(this.misdatos.habilidades)
       for (const item of this.misdatos.habilidades) {
-        this.graficoChartDataSet.push ({data: item.porcentaje});
+        this.graficoChartDataSet.push ({data: item.porcentajes});
         this.graficoChartLabels.push(item.nombre)
       }
       //console.log(this.graficoChartDataSet);

@@ -13,6 +13,6 @@ export class DatosPorfolioService {
   obtenerDatos():Observable<any> {
     //console.log("Servicio de datos");
     //return this.http.get('../../assets/data/data.json')
-    return this.http.get<any>(this.url+"personas");
+    return this.http.get<any>(this.url+"personas/1");
   }
 }
