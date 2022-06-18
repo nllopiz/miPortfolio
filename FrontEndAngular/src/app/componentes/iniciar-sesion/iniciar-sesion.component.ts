@@ -9,32 +9,32 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
   styleUrls: ['./iniciar-sesion.component.css']
 })
 export class IniciarSesionComponent implements OnInit {
-  form:FormGroup;
+  form: FormGroup;
 
   constructor(
-    private formBuilder:FormBuilder, 
-    private autenticacioService:AutenticacionService,
-    private ruta:Router) {
-    this.form=this.formBuilder.group(
+    private formBuilder: FormBuilder,
+    private autenticacioService: AutenticacionService,
+    private ruta: Router) {
+    this.form = this.formBuilder.group(
       {
-        email:['', [Validators.required, Validators.email]],
+        email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(8)]]
       }
     )
   }
-    
+
   ngOnInit(): void {
   }
 
   get Email() {
-    return this.form.get('email'); 
+    return this.form.get('email');
   }
 
   get Password() {
     return this.form.get('password');
   }
 
-  onEnviar(event:Event) {
+  onEnviar(event: Event) {
     event.preventDefault;
     this.autenticacioService.IniciarSesion(this.form.value).subscribe(data => {
       console.log("DATA:" + JSON.stringify(data));

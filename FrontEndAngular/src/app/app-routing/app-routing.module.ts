@@ -10,6 +10,8 @@ import { ProyectosComponent } from '../componentes/proyectos/proyectos.component
 import { PageNotFoundComponent } from '../componentes/page-not-found/page-not-found.component';
 import { InteresesComponent } from '../componentes/intereses/intereses.component';
 import { IniciarSesionComponent } from '../componentes/iniciar-sesion/iniciar-sesion.component';
+import { NuevaExperienciaComponent } from '../componentes/experiencia/nueva-experiencia.component';
+import { EditarExperienciaComponent } from '../componentes/experiencia/editar-experiencia.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path: 'acerca-de', component:AcercaDeComponent},
   {path: 'formacion', component:FormacionComponent},
   {path: 'experiencia', component:ExperienciaComponent},
+  {path: 'nuevaExperiencia', component:NuevaExperienciaComponent},
+  {path: 'editarExperiencia/:id', component:EditarExperienciaComponent},
   {path: 'skills', component:HabilidadesComponent},
   {path: 'proyectos', component:ProyectosComponent},
   {path: 'intereses', component:InteresesComponent},

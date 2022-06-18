@@ -1,71 +1,81 @@
 <section class="container text-light" name="experiencia">
-  
-	<div class="row align-items-center">
-  	
-		<!-- Navegación <  -->
-		<div class="col-sm-1 text-center">
+  <div class="row align-items-center">
+    <!-- Navegación <  -->
+    <div class="col-sm-1 text-center">
       <a routerLink="/acerca-de">
         <h1>
           <i
             class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
-	        ></i>
+          ></i>
         </h1>
       </a>
     </div>
 
-		<!-- Contenido -->
+    <!-- Contenido -->
     <div class="col col-sm-10 align-items-center">
       <div class="row mx-sm-5">
         <!-- Título -->
         <div class="d-flex align-items-star">
-          <h1 class="d-inline">Experiencia</h1>
+          <div class="col-9">
+            <h1 class="d-inline">Experiencia</h1>
+          </div>
+          <div class="col-3">
+            <a routerLink="/nuevaExperiencia"
+              ><span class="badge bg-negro text-rojo action-btn"
+                ><i class="bi bi-plus-lg"></i></span
+            ></a>
+          </div>
         </div>
 
         <!-- Lista de puestos-->
-        <div id="listaPuestos" *ngFor="let puesto of misdatos.experiencias" class="mx-sm-5">
+        <div
+          id="listaExperiencias"
+          *ngFor="let experiencia of misdatos.experiencias"
+          class="mx-sm-5"
+        >
           <!--Puesto-->
           <div class="row my-3">
             <!-- Título y botones edición -->
             <div class="d-flex align-items-star">
               <div class="col-9">
-                <h4>{{ puesto.titulo }}</h4>
+                <h4>{{ experiencia.titulo }}</h4>
               </div>
               <div class="col-3 d-flex justify-content-end">
-                <a href="#" onclick=""
-                ><span class="badge bg-negro text-rojo action-btn"
-                  ><i class="bi bi-pencil"></i></span
+                <a routerLink="/editarExperiencia/{{ experiencia.id }}"
+                  ><span class="badge bg-negro text-rojo action-btn"
+                    ><i class="bi bi-pencil"></i></span
                 ></a>
-                <a href="#" onclick=""
+                <a (click)="eliminarExperiencia(experiencia.id)"
                   ><span class="badge bg-negro text-rojo ms-1 action-btn"
                     ><i class="bi bi-x-lg"></i></span
                 ></a>
               </div>
             </div>
             <div>
-              <h6 class="lead">{{ puesto.periodo }}</h6>
+              <h6 class="lead">{{ experiencia.periodo }}</h6>
             </div>
-            <div class="col-3 col-sm-2 d-flex justify-content-center align-items-center">
-              <img src= '{{ puesto.logo }}' width="100%" alt="">
+            <div
+              class="col-3 col-sm-2 d-flex justify-content-center align-items-center"
+            >
+              <img src="{{ experiencia.logo }}" width="100%" alt="" />
             </div>
             <div class="col-9 col-sm-10 d-flex align-items-center">
-              <span>{{ puesto.descripcion }}</span>
+              <span>{{ experiencia.descripcion }}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-		
-		<!-- Navegación >  -->
-		<div class="col-sm-1 text-center">
-			<a routerLink="/formacion">
-				<h1>
-					<i
-						class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
-					></i>
-				</h1>
-			</a>
-		</div>
 
-	</div>
-
+    <!-- Navegación >  -->
+    <div class="col-sm-1 text-center">
+      <a routerLink="/formacion">
+        <h1>
+          <i
+            class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
+          ></i>
+        </h1>
+      </a>
+    </div>
+  </div>
 </section>

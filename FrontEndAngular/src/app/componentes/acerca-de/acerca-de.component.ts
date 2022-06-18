@@ -9,7 +9,7 @@ import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 })
 export class AcercaDeComponent implements OnInit {
   
-  //defino la variable que contendrá los datos del archivo .json
+  //defino la variable que contendrá los datos
   misdatos:any;
 
   //en el constructor especificamos el servicio que trae los datos

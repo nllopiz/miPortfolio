@@ -9,17 +9,24 @@ import { FormacionComponent } from './componentes/formacion/formacion.component'
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
+import { EditarAcercaDeComponent } from './componentes/acerca-de/editar-acerca-de.component';
+import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia.component';
+import { NuevaExperienciaComponent } from './componentes/experiencia/nueva-experiencia.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRouting } from './app-routing/app-routing.module';
-import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
-
-import { NgChartsModule } from 'ng2-charts';
-import { InteresesComponent } from './componentes/intereses/intereses.component';
-import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatosPorfolioService } from './servicios/datos-porfolio.service';
 import { InterceptorService } from './servicios/interceptor.service';
+
+//NG2charts
+import { NgChartsModule } from 'ng2-charts';
+
+//Toastr
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,15 +39,20 @@ import { InterceptorService } from './servicios/interceptor.service';
     ProyectosComponent,
     FooterComponent,
     PageNotFoundComponent,
-    InteresesComponent,
     IniciarSesionComponent,
+    EditarAcercaDeComponent,
+    EditarExperienciaComponent,
+    NuevaExperienciaComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRouting,
     NgChartsModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     DatosPorfolioService,
