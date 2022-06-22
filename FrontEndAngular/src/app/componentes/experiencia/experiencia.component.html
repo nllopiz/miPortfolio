@@ -35,12 +35,12 @@
         >
           <!--Puesto-->
           <div class="row my-3">
-            <!-- Título y botones edición -->
+            <!-- Título y botones -->
             <div class="d-flex align-items-star">
               <div class="col-9">
                 <h4>{{ experiencia.titulo }}</h4>
               </div>
-              <div class="col-3 d-flex justify-content-end">
+              <div class="col-3 d-flex justify-content-end" *ngIf="usuarioAutenticado">
                 <a routerLink="/editarExperiencia/{{ experiencia.id }}"
                   ><span class="badge bg-negro text-rojo action-btn"
                     ><i class="bi bi-pencil"></i></span

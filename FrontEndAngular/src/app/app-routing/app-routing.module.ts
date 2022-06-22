@@ -13,14 +13,19 @@ import { IniciarSesionComponent } from '../componentes/iniciar-sesion/iniciar-se
 import { NuevaExperienciaComponent } from '../componentes/experiencia/nueva-experiencia.component';
 import { EditarExperienciaComponent } from '../componentes/experiencia/editar-experiencia.component';
 
+import { GuardGuard } from '../servicios/guard.guard';
+import { EliminarExperienciaComponent } from '../componentes/experiencia/eliminar-experiencia.component';
+ 
+
 
 const routes: Routes = [
   {path: 'iniciar-sesion', component:IniciarSesionComponent},
   {path: 'acerca-de', component:AcercaDeComponent},
   {path: 'formacion', component:FormacionComponent},
   {path: 'experiencia', component:ExperienciaComponent},
-  {path: 'nuevaExperiencia', component:NuevaExperienciaComponent},
-  {path: 'editarExperiencia/:id', component:EditarExperienciaComponent},
+  {path: 'nuevaExperiencia', component:NuevaExperienciaComponent, canActivate:[GuardGuard]},
+  {path: 'editarExperiencia/:id', component:EditarExperienciaComponent, canActivate:[GuardGuard]},
+  {path: 'eliminarExperiencia/:id', component:EliminarExperienciaComponent, canActivate:[GuardGuard]},
   {path: 'skills', component:HabilidadesComponent},
   {path: 'proyectos', component:ProyectosComponent},
   {path: 'intereses', component:InteresesComponent},

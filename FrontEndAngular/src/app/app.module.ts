@@ -27,6 +27,7 @@ import { NgChartsModule } from 'ng2-charts';
 //Toastr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { EliminarExperienciaComponent } from './componentes/experiencia/eliminar-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
     EditarAcercaDeComponent,
     EditarExperienciaComponent,
     NuevaExperienciaComponent,
+    EliminarExperienciaComponent,
   ],
   imports: [
     BrowserModule,

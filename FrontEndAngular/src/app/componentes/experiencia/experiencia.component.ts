@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 
 @Component({
@@ -9,10 +10,12 @@ import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 })
 export class ExperienciaComponent implements OnInit {
 
-  misdatos:any;
+  misdatos: any;
+  usuarioAutenticado: any;
 
   constructor(
     private datosPortfolio: DatosPorfolioService, 
+    private autenticacionServicio: AutenticacionService,
     private toaster: ToastrService) { }
 
   ngOnInit(): void {
@@ -23,7 +26,10 @@ export class ExperienciaComponent implements OnInit {
       },
       err => {
         console.log(err);
-      });
+      }
+    );
+    this.usuarioAutenticado = this.autenticacionServicio.UsuarioAutenticado.tokenDeAcceso;
+
   } 
 
   eliminarExperiencia(id: string) {

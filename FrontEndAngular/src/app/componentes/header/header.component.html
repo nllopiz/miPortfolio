@@ -11,27 +11,6 @@
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!--
-            <div class="collapse navbar-collapse" id="navbarmenu">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 mt-4">
-                    <li>
-                        <a class="nav-link" routerLink="acerca-de">Inicio</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="formacion">Formación</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="experiencia">Experiencia</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="skills">Skills</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="proyectos">Proyectos</a>
-                    </li>
-                </ul>
-            </div>
-            -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-4">
                     <li>
@@ -43,8 +22,11 @@
                     <li>
                         <a class="nav-link" href="#">LinkedIn</a>
                     </li>
-                    <li>
+                    <li *ngIf="!usuarioAutenticado">
                         <a class="nav-link" routerLink="/iniciar-sesion"><i class="bi bi-person-circle"></i> Login</a> 
+                    </li>
+                    <li *ngIf="usuarioAutenticado">
+                        <a class="nav-link" href="" (click)="cerrarSesion()"><i class="bi bi-person-circle"></i> Logout</a> 
                     </li>
                 </ul>
             </div>
