@@ -15,11 +15,11 @@ import { EditarAcercaDeComponent } from './componentes/acerca-de/editar-acerca-d
 import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia.component';
 import { NuevaExperienciaComponent } from './componentes/experiencia/nueva-experiencia.component';
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRouting } from './app-routing/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatosPorfolioService } from './servicios/datos-porfolio.service';
-import { InterceptorService } from './servicios/interceptor.service';
+import { interceptorProvider } from './servicios/interceptor.service';
 
 //NG2charts
 import { NgChartsModule } from 'ng2-charts';
@@ -58,10 +58,7 @@ import { EliminarExperienciaComponent } from './componentes/experiencia/eliminar
   ],
   providers: [
     DatosPorfolioService,
-    { provide: HTTP_INTERCEPTORS, 
-      useClass: InterceptorService,
-      multi: true
-    },
+    interceptorProvider
   ],
   bootstrap: [AppComponent]
 })

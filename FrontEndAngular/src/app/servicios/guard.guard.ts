@@ -15,12 +15,12 @@ export class GuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      let currentUser = this.autenticacionServicio.UsuarioAutenticado;
+      let currentUser = this.autenticacionServicio.usuarioAutenticado;
       /*console.log("CanActivate...<br>");
       console.log(currentUser);
       console.log(currentUser.tokenDeAcceso);*/
       if (currentUser && currentUser.tokenDeAcceso) {
-        console.log(currentUser.accessToken);
+        console.log(currentUser.tokenDeAcceso);
         return true;
       }
       else {

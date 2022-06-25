@@ -28,12 +28,12 @@ export class ExperienciaComponent implements OnInit {
         console.log(err);
       }
     );
-    this.usuarioAutenticado = this.autenticacionServicio.UsuarioAutenticado.tokenDeAcceso;
+    this.usuarioAutenticado = this.autenticacionServicio.usuarioAutenticado.tokenDeAcceso;
 
   } 
 
-  eliminarExperiencia(id: string) {
-    this.datosPortfolio.eliminarExperiencia('id').subscribe(
+  eliminarExperiencia(id: number) {
+    this.datosPortfolio.eliminarExperiencia(id).subscribe(
       data => {
         this.toaster.success('Experiencia eliminada', 'OK', {
           timeOut: 3800, positionClass: 'toast-top-center'

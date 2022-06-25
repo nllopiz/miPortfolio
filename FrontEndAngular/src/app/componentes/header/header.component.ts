@@ -17,7 +17,17 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.usuarioAutenticado = this.autenticacionServicio.UsuarioAutenticado.tokenDeAcceso;
+    
+  }
+
+  inicioSesion():boolean {
+    let usuario:string = this.autenticacionServicio.usuarioAutenticado.tokenDeAcceso;
+    if(!usuario){
+      return false;
+    }
+    else {
+      return true;
+    }
   }
 
   cerrarSesion():void {

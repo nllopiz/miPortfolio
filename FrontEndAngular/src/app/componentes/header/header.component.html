@@ -22,10 +22,10 @@
                     <li>
                         <a class="nav-link" href="#">LinkedIn</a>
                     </li>
-                    <li *ngIf="!usuarioAutenticado">
+                    <li *ngIf="!inicioSesion()">
                         <a class="nav-link" routerLink="/iniciar-sesion"><i class="bi bi-person-circle"></i> Login</a> 
                     </li>
-                    <li *ngIf="usuarioAutenticado">
+                    <li *ngIf="inicioSesion()">
                         <a class="nav-link" href="" (click)="cerrarSesion()"><i class="bi bi-person-circle"></i> Logout</a> 
                     </li>
                 </ul>

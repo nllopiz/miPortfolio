@@ -12,18 +12,17 @@ import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 export class EditarExperienciaComponent implements OnInit {
 
   experiencia: Experiencia = new Experiencia('','','','');
+  id: number = Number(this.activatedRoute.snapshot.paramMap.get('id'));
   
   constructor(
-    private experienciaServicio: DatosPorfolioService,
+    private datosPorfolioServicio: DatosPorfolioService,
     private activatedRoute: ActivatedRoute,
     private toaster: ToastrService,
     private rutas: Router
   ) { }
 
   ngOnInit(): void {
-    const idExp = this.activatedRoute.snapshot.paramMap.get('id');
-    //console.log(idExp);
-    this.experienciaServicio.verExperiencia(`${idExp}`).subscribe(
+    this.datosPorfolioServicio.verExperiencia(this.id).subscribe(
       data => {
         this.experiencia = data;
         //console.log(this.experiencia);
@@ -39,8 +38,7 @@ export class EditarExperienciaComponent implements OnInit {
   }
 
   onUpdate(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.experienciaServicio.editarExperiencia('id', this.experiencia).subscribe(
+    this.datosPorfolioServicio.editarExperiencia(this.id, this.experiencia).subscribe(
       data => {
         this.toaster.success('Experiencia actualizada', 'OK', {
           timeOut: 3800, positionClass: 'toast-top-center'
@@ -55,5 +53,6 @@ export class EditarExperienciaComponent implements OnInit {
       }
     )
   }
+
 
 }
