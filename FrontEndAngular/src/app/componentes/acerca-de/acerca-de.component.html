@@ -1,81 +1,76 @@
 <section class="container text-light" name="sobreMi">
-  
-  <div class="row align-items-center">
-		
-		<!-- Contenido -->
-    <div class="col-sm-11">
-      <div class="row d-flex justify-content-center">
-        <div class="col-sm-3">
-          <div>
-            <!--botón editar-->
-            <div class="d-flex justify-content-end">
-              <a href="#sobreMi" onclick="editarfoto()"
-                ><span class="badge bg-negro text-rojo action-btn">
-                  <i class="bi bi-pencil"></i></span
-              ></a>
-            </div>
-            <div class="text-center p-2">
-              <img [src]="misdatos.pathFoto" id="miFoto" alt="" width="100%" />
-              
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-8 d-flex justify-content-center align-items-center">
-          <div class="row pt-2">
-            <!--Título y botón editar-->
-            <div class="d-flex justify-content-end">
-              <a href="#sobreMi" onclick="editar(editarSobreMi)"
-                ><span class="badge bg-negro text-rojo action-btn"
-                  ><i class="bi bi-pencil"></i></span
-              ></a>
-            </div>
-            <div class="text-center">
-              <h1>{{ misdatos.nombre }} {{ misdatos.apellido }}</h1>
-              <p id="miNombre" class="lead">
-                {{ misdatos.titulo }}<br />{{ misdatos.ubicacion }}
-              </p>
+  <div class="card shadow-lg bg-dark bg-opacity-25 p-4">
+    <div class="card-body">
+      <div class="row align-items-center">
+        
+        <!-- Contenido -->
+        <div class="col-sm-11">
+          <div class="row d-flex justify-content-center">
+            <div class="col-sm-3">
+              <div>
+                <div class="text-center p-2 mt-4">
+                  <img [src]="misdatos.pathFoto" id="miFoto" alt="" width="100%" />
+                </div>
+              </div>
             </div>
 
-            <div class="">
-<!--
-  Información profesional resumida (con botón de edición)
---> 
-              <p id="textoSobreMi" class="text-center">
-                {{ misdatos.sobreMi }}
-              </p>
-              <div id="editarSobreMi" class="d-none">
-                <textarea
-                  class="w-100"
-                  name=""
-                  id="textAreaSobreMi"
-                  cols="50"
-                  rows="5"
-                  oninput="cambiarSobreMi(this.value)"
-                ></textarea>
-                <input
-                  type="button"
-                  value="Guardar"
-                  class="btn bg-rojo text-white d-block"
-                  onclick="ocultarEditarSobreMi()"
-                />
+            <div class="col-sm-8 d-flex justify-content-center align-items-center">
+              <div class="row pt-2">
+                <!--Título y botón editar-->
+                <div class="d-flex justify-content-end" *ngIf="usuarioAutenticado">
+                  <a routerLink="/editarAcerca-de/{{misdatos.id}}"
+                    ><span class="badge bg-negro text-rojo action-btn"
+                      ><i class="bi bi-pencil"></i></span
+                  ></a>
+                </div>
+                <div class="text-center">
+                  <h1>{{ misdatos.nombre }} {{ misdatos.apellido }}</h1>
+                  <p id="miNombre" class="lead">
+                    {{ misdatos.titulo }}<br />{{ misdatos.ubicacion }}
+                  </p>
+                </div>
+
+                <div class="">
+    <!--
+      Información profesional resumida (con botón de edición)
+    --> 
+                  <p id="textoSobreMi" class="text-center">
+                    {{ misdatos.sobreMi }}
+                  </p>
+                  <div id="editarSobreMi" class="d-none">
+                    <textarea
+                      class="w-100"
+                      name=""
+                      id="textAreaSobreMi"
+                      cols="50"
+                      rows="5"
+                      oninput="cambiarSobreMi(this.value)"
+                    ></textarea>
+                    <input
+                      type="button"
+                      value="Guardar"
+                      class="btn bg-rojo text-white d-block"
+                      onclick="ocultarEditarSobreMi()"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        
+        <!-- Navegación >  -->
+        <div class="col-sm-1 text-center">
+          <a routerLink="/experiencia">
+            <h1>
+              <i
+                class="bi bi-chevron-compact-right text-rojo bg-negro rounded action-btn"
+              ></i>
+            </h1>
+          </a>
+        </div>
+        
       </div>
     </div>
-    
-		<!-- Navegación >  -->
-    <div class="col-sm-1 text-center">
-      <a routerLink="/experiencia">
-        <h1>
-          <i
-            class="bi bi-chevron-compact-right text-rojo bg-negro rounded action-btn"
-          ></i>
-        </h1>
-      </a>
-    </div>
-		
   </div>
 </section>

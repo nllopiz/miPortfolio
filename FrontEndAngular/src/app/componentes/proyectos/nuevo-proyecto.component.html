@@ -1,0 +1,36 @@
+<form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="col-6 mx-auto">
+    <h3 class="text-light mx-auto">Nuevo Proyecto</h3>
+    <div class="mb-3 form-outline form-white">
+      <div class="form-group">
+        <label for="titulo" class="form-label text-white">Titulo</label>      
+        <input type="text" name="titulo" id="titulo" class="form-control" [(ngModel)]="titulo" required>
+      </div>
+    </div>
+    <div class="mb-3 form-outline form-white">
+      <div class="form-group">
+        <label for="pathImage" class="form-label text-white">Ruta de la Imagen</label>      
+        <input type="text" name="pathImage" id="pathImage" class="form-control" [(ngModel)]="pathImage" required>
+      </div>
+    </div>
+    <div class="mb-3 form-outline form-white">
+      <div class="form-group">
+        <label for="descripcion" class="form-label text-white">Descripcion</label>      
+        <textarea type="text" name="descripcion" id="descripcion" class="form-control" [(ngModel)]="descripcion" required></textarea>
+      </div>
+    </div>
+    <div class="mb-3 form-outline form-white">
+        <div class="form-group">
+          <label for="link" class="form-label text-white">Link del Sitio</label>      
+          <input type="text" name="link" id="link" class="form-control" [(ngModel)]="link">
+        </div>
+      </div>
+      <div class="mb-3 form-outline form-white">
+        <div class="form-group">
+          <label for="gitHub" class="form-label text-white">Link de GitHub</label>      
+          <input type="text" name="gitHub" id="gitHub" class="form-control" [(ngModel)]="github">
+        </div>
+      </div>
+  
+    <button type="submit" class="btn bg-rojo text-light" [disabled]="!f.valid">Crear</button>
+  </form>
+  

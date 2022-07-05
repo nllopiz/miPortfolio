@@ -27,31 +27,31 @@ public class PersonaService implements IPersonaService {
         personaDTO.setTitulo(persona.getTitulo());
         personaDTO.setUbicacion(persona.getUbicacion());
         personaDTO.setSobreMi(persona.getSobreMi());
-        personaDTO.setExperiencias(persona.getExperiencias());
+/*        personaDTO.setExperiencias(persona.getExperiencias());
         personaDTO.setFormaciones(persona.getFormaciones());
         personaDTO.setProyectos(persona.getProyectos());
         personaDTO.setHabilidades(persona.getHabilidades());
-        
+*/        
         return personaDTO;
     }
     
     //Pasar DTO a entidad
-    private Persona convertirDTOEntidad(PersonaDTO personaNuevaDTO){
+    private Persona convertirDTOEntidad(PersonaDTO personaDTO){
         Persona personaNueva = new Persona();
         
-        personaNueva.setId(personaNuevaDTO.getId());
-        personaNueva.setEmail(personaNuevaDTO.getEmail());
-        personaNueva.setApellido(personaNuevaDTO.getApellido());
-        personaNueva.setNombre(personaNuevaDTO.getNombre());
-        personaNueva.setPathFoto(personaNuevaDTO.getPathFoto());
-        personaNueva.setTitulo(personaNuevaDTO.getTitulo());
-        personaNueva.setUbicacion(personaNuevaDTO.getUbicacion());
-        personaNueva.setSobreMi(personaNuevaDTO.getSobreMi());
-        personaNueva.setExperiencias(personaNuevaDTO.getExperiencias());
-        personaNueva.setFormaciones((personaNuevaDTO.getFormaciones()));
-        personaNueva.setProyectos(personaNuevaDTO.getProyectos());
-        personaNueva.setHabilidades(personaNuevaDTO.getHabilidades());
-        
+        personaNueva.setId(personaDTO.getId());
+        personaNueva.setEmail(personaDTO.getEmail());
+        personaNueva.setApellido(personaDTO.getApellido());
+        personaNueva.setNombre(personaDTO.getNombre());
+        personaNueva.setPathFoto(personaDTO.getPathFoto());
+        personaNueva.setTitulo(personaDTO.getTitulo());
+        personaNueva.setUbicacion(personaDTO.getUbicacion());
+        personaNueva.setSobreMi(personaDTO.getSobreMi());
+/*        personaNueva.setExperiencias(personaDTO.getExperiencias());
+        personaNueva.setFormaciones((personaDTO.getFormaciones()));
+        personaNueva.setProyectos(personaDTO.getProyectos());
+        personaNueva.setHabilidades(personaDTO.getHabilidades());
+*/        
         return personaNueva;        
     }
 
@@ -59,8 +59,8 @@ public class PersonaService implements IPersonaService {
     private PersonaRepository personaRepo;
 
     @Override
-    public PersonaDTO crearPersona(PersonaDTO personaNuevaDTO) {
-        Persona persona = convertirDTOEntidad(personaNuevaDTO);
+    public PersonaDTO crearPersona(PersonaDTO personaDTO) {
+        Persona persona = convertirDTOEntidad(personaDTO);
         Persona personaNueva = personaRepo.save(persona);
         
         PersonaDTO personaRespuesta = convertirEntidadDTO(personaNueva);

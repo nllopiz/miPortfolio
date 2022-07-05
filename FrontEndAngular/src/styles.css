@@ -10,16 +10,17 @@ body {
 
 .bg-rojo {
   /*Color rojo de fondo*/
-  background-color: #E31B25;
+  /*background-color: #E31B25;*/
+  background-color: red;
 }
 
 .text-rojo {
-  color: #E31B25;
+  color: red;
 }
 
 .bg-negro {
   /*Color negro de fondo*/
-  background-color: #1C1C1C;
+  background-color: #0F0F0F;
 }
 
 .border-negro {

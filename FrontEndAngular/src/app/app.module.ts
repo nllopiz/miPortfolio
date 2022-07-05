@@ -27,7 +27,12 @@ import { NgChartsModule } from 'ng2-charts';
 //Toastr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { EliminarExperienciaComponent } from './componentes/experiencia/eliminar-experiencia.component';
+import { EditarFormacionComponent } from './componentes/formacion/editar-formacion.component';
+import { NuevaFormacionComponent } from './componentes/formacion/nueva-formacion.component';
+import { EditarProyectoComponent } from './componentes/proyectos/editar-proyecto.component';
+import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto.component';
+import { EditarHabilidadComponent } from './componentes/habilidades/editar-habilidad.component';
+import { NuevaHabilidadComponent } from './componentes/habilidades/nueva-habilidad.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { EliminarExperienciaComponent } from './componentes/experiencia/eliminar
     EditarAcercaDeComponent,
     EditarExperienciaComponent,
     NuevaExperienciaComponent,
-    EliminarExperienciaComponent,
+    EditarFormacionComponent,
+    NuevaFormacionComponent,
+    EditarProyectoComponent,
+    NuevoProyectoComponent,
+    EditarHabilidadComponent,
+    NuevaHabilidadComponent,
   ],
   imports: [
     BrowserModule,

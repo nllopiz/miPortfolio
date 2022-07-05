@@ -11,7 +11,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./nueva-experiencia.component.css']
 })
 export class NuevaExperienciaComponent implements OnInit {
-  //form: FormGroup;
 
   titulo: string = '';
   periodo: string = '';
@@ -19,22 +18,15 @@ export class NuevaExperienciaComponent implements OnInit {
   descripcion: string = '';
 
   constructor(
-    //private formBuilder: FormBuilder,
     private datosPortfolioServicio: DatosPorfolioService,
     private toaster: ToastrService,
     private rutas: Router
-  ) {
-    /*
-    this.form = this.formBuilder.group(
-      {      }
-    )*/
-  }
+  ) { }
 
   ngOnInit(): void {
   }
 
   onCreate(): void {
-    //event.preventDefault;
     const experiencia = new Experiencia(this.titulo, this.periodo, this.pathLogo, this.descripcion);
     this.datosPortfolioServicio.nuevaExperiencia(experiencia).subscribe(
       data => {

@@ -34,7 +34,7 @@ export class EditarExperienciaComponent implements OnInit {
         this.rutas.navigate(['/experiencia']);
       }
     )
-    
+     
   }
 
   onUpdate(): void {

@@ -10,19 +10,21 @@ import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 })
 export class ExperienciaComponent implements OnInit {
 
-  misdatos: any;
+  experiencias: any;
   usuarioAutenticado: any;
 
   constructor(
-    private datosPortfolio: DatosPorfolioService, 
+    private datosPortfolioServicio: DatosPorfolioService, 
     private autenticacionServicio: AutenticacionService,
-    private toaster: ToastrService) { }
+    private toaster: ToastrService
+  ) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(
+
+    this.datosPortfolioServicio.verExperiencias().subscribe(
       data => {
-      this.misdatos = data;
-      //console.log(this.misdatos)
+      this.experiencias = data; 
+      console.log(this.experiencias);
       },
       err => {
         console.log(err);
@@ -31,19 +33,19 @@ export class ExperienciaComponent implements OnInit {
     this.usuarioAutenticado = this.autenticacionServicio.usuarioAutenticado.tokenDeAcceso;
 
   } 
-
-  eliminarExperiencia(id: number) {
-    this.datosPortfolio.eliminarExperiencia(id).subscribe(
+ 
+  onDelete(id: number): void {
+    console.log('Borrar experiencia ' + id);
+    this.datosPortfolioServicio.eliminarExperiencia(id).subscribe(
       data => {
+        this.ngOnInit();
+      },
+      err => {
+        console.log('eliminado');
         this.toaster.success('Experiencia eliminada', 'OK', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
-        this.datosPortfolio.obtenerDatos();
-      },
-      err => {
-        this.toaster.error('Fallo al eliminar la experiencia', 'Fail', {
-          timeOut: 3800, positionClass: 'toast-top-center'
-        });
+        this.ngOnInit();
       }
     );
   }

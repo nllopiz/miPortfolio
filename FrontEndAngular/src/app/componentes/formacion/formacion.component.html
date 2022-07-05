@@ -9,32 +9,49 @@
           ></i>
         </h1>
       </a>
-    </div>
+    </div> 
 
     <!-- Contenido  -->
     <div class="col col-sm-10 align-items-center">
       <div class="row mx-sm-5">
         <!-- Título -->
         <div class="d-flex align-items-star">
-          <h1 class="d-inline">Formación</h1>
+          <div class="col-9">
+            <h1 class="d-inline">Formación</h1>
+          </div>
+          <!-- Botón Nueva Formación-->
+          <div class="col-3" *ngIf="usuarioAutenticado">
+            <a routerLink="/nuevaFormacion"
+              ><span class="badge bg-negro text-rojo action-btn"
+                ><i class="bi bi-plus-lg"></i></span
+            ></a>
+          </div>
         </div>
 
-        <!-- Lista de capacitaciones -->
-        <div id="listaFormacion" *ngFor="let formacion of misdatos.formaciones" class="mx-sm-5">
-          <!--Puesto-->
+        <!-- Lista de formaciones -->
+        <div 
+          id="listaFormacion" 
+          *ngFor="let formacion of formaciones" class="mx-sm-5"
+        >
+          <!--Foramcion-->
           <div class="row my-3">
-            <!--Título y botones edición -->
+
             <div class="d-flex align-items-star">
+              <!-- Título -->
               <div class="col-9">
                 <h4>{{ formacion.titulo }}</h4>
               </div>
-              <div class="col-3 d-flex justify-content-end">
-                <a href="#" onclick="editarPuesto()"
+              <!-- Botones -->
+              <div class="col-3 d-flex justify-content-end"
+              *ngIf="usuarioAutenticado">
+                <!-- Botón Editar -->
+                <a routerLink="/editarFormacion/{{ formacion.id }}"
                 ><span class="badge bg-negro text-rojo ms-4 action-btn"
                   ><i class="bi bi-pencil"></i></span
                 ></a>
-                <a href="#" onclick="eliminarPuesto()"
-                  ><span class="badge bg-negro text-rojo ms-2 action-btn"
+                <!-- Botón Elimninar -->
+                <a (click)="onDelete(formacion.id)"
+                  ><span class="badge bg-negro text-rojo ms-1 action-btn"
                     ><i class="bi bi-x-lg"></i></span
                 ></a>
               </div>              
@@ -42,13 +59,14 @@
             <div>
               <h6 class="lead">{{ formacion.periodo }}</h6>
             </div>
-            <div class="col-3 col-sm-2 d-flex justify-content-center align-items-center">
+            <div
+             class="col-3 col-sm-2 d-flex justify-content-center align-items-center"
+             >
               <img src= '{{ formacion.logo }}'  width="100%" alt="">
             </div>
             <div class="col-9 col-sm-10 d-flex align-items-center">
               <span>{{ formacion.descripcion }}</span>
             </div>
-            <!-- <p>drag and drop https://youtu.be/-N515SDoYuU</p> -->
           </div>
         </div>
       </div>
@@ -56,7 +74,7 @@
 
     <!-- Navegación >  -->
     <div class="col-sm-1 text-center">
-      <a routerLink="/skills">
+      <a routerLink="/habilidades">
         <h1>
           <i
             class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"

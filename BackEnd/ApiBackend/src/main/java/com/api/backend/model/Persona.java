@@ -43,19 +43,19 @@ public class Persona implements Serializable {
     @Column(name = "sobreMi", nullable = false)
     private String sobreMi;
 
-    @JsonBackReference //para soluciona errores de serialización
+    //@JsonBackReference //para soluciona errores de serialización
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Experiencia> experiencias = new HashSet<>();
 
-    @JsonBackReference
+    //@JsonBackReference
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Formacion> formaciones = new HashSet<>();
     
-    @JsonBackReference
+    //@JsonBackReference
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Proyecto> proyectos = new HashSet<>();
 
-    @JsonBackReference
+    //@JsonBackReference
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Habilidad> habilidades = new HashSet<>();
     
@@ -73,7 +73,5 @@ public class Persona implements Serializable {
         this.ubicacion = ubicacion;
         this.sobreMi = sobreMi;
     }
-
-    
 
 }

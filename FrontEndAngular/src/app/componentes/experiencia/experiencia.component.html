@@ -19,7 +19,8 @@
           <div class="col-9">
             <h1 class="d-inline">Experiencia</h1>
           </div>
-          <div class="col-3">
+          <!-- Botón Nueva Experiencia-->
+          <div class="col-3" *ngIf="usuarioAutenticado">
             <a routerLink="/nuevaExperiencia"
               ><span class="badge bg-negro text-rojo action-btn"
                 ><i class="bi bi-plus-lg"></i></span
@@ -30,22 +31,26 @@
         <!-- Lista de puestos-->
         <div
           id="listaExperiencias"
-          *ngFor="let experiencia of misdatos.experiencias"
+          *ngFor="let experiencia of experiencias"
           class="mx-sm-5"
         >
           <!--Puesto-->
           <div class="row my-3">
-            <!-- Título y botones -->
+            
             <div class="d-flex align-items-star">
+              <!-- Título -->
               <div class="col-9">
                 <h4>{{ experiencia.titulo }}</h4>
               </div>
+              <!-- Botones -->
               <div class="col-3 d-flex justify-content-end" *ngIf="usuarioAutenticado">
+                <!-- Botón Editar -->
                 <a routerLink="/editarExperiencia/{{ experiencia.id }}"
                   ><span class="badge bg-negro text-rojo action-btn"
                     ><i class="bi bi-pencil"></i></span
                 ></a>
-                <a (click)="eliminarExperiencia(experiencia.id)"
+                <!-- Botón Elimninar -->
+                <a (click)="onDelete(experiencia.id)"
                   ><span class="badge bg-negro text-rojo ms-1 action-btn"
                     ><i class="bi bi-x-lg"></i></span
                 ></a>

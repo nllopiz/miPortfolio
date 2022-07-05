@@ -1,75 +1,92 @@
-<section class="container text-light" name="proyectos">
-  
-	<div class="row align-items-center">
-  	
-		<!-- Navegación <  -->
-		<div class="col-sm-1 text-center">
-      <a routerLink="/skills">
-        <h1>
-          <i
-            class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
-	        ></i>
-        </h1>
-      </a>
-    </div>
-
-		<!-- Contenido -->
-    <div class="col col-sm-10 d-flex align-items-center">
-      <div class="row mx-sm-5">
-        <!-- Título -->
-        <div class="d-flex align-items-star">
-          <h1 class="d-inline">Proyectos</h1>
+<section class="container text-light" name="proyectos">  
+  <div class="card shadow-lg bg-dark bg-opacity-25 p-4">
+    <div class="card-body">
+      <div class="row align-items-center">  	
+        <!-- Navegación <  -->
+        <div class="col-sm-1 text-center">
+          <a routerLink="/habilidades">
+            <h1>
+              <i
+                class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
+              ></i>
+            </h1>
+          </a>
         </div>
-
-        <!-- Lista de puestos-->
-        <div id="listaPuestos" *ngFor="let proyecto of misdatos.proyectos" class="mx-sm-5">
-          <!--Puesto-->
-          <div class="row my-3">
-            <!-- Título y botones edición -->
+    
+        <!-- Contenido -->
+        <div class="col col-sm-10 align-items-center">
+          <div class="row mx-sm-5">
+            <!-- Título -->
             <div class="d-flex align-items-star">
-              <div class="col-9">
-                <h4>{{ proyecto.titulo }}</h4>
+              <div>
+                <h1 class="d-inline">Proyectos</h1>
               </div>
-              <div class="col-3 d-flex justify-content-end">
-                <a href="#" onclick=""
-                ><span class="badge bg-negro text-rojo action-btn"
-                  ><i class="bi bi-pencil"></i></span
-                ></a>
-                <a href="#" onclick=""
-                  ><span class="badge bg-negro text-rojo ms-1 action-btn"
-                    ><i class="bi bi-x-lg"></i></span
+              <!-- Botón Nuevo Proyecto-->
+              <div class="col-3 mx-3" *ngIf="usuarioAutenticado">
+                <a routerLink="/nuevoProyecto"
+                  ><span class="badge bg-negro text-rojo action-btn"
+                    ><i class="bi bi-plus-lg"></i></span
                 ></a>
               </div>
             </div>
-            <div>
-              <h6 class="lead">{{ proyecto.periodo }}</h6>
-            </div>
-            <div class="col-3 col-sm-2 d-flex justify-content-center align-items-center">
-              <img src= '{{ proyecto.imagen }}' width="100%" alt="">
-            </div>
-            <div class="col-9 col-sm-10 d-flex align-items-center">
-              <div class="row">
-                <span>{{ proyecto.descripcion }}</span>
-              <span class="d-block"><a href="{{ proyecto.link }}" target="">Ver Sitio</a></span>
+
+            <!-- Lista de proyectos-->
+            <div id="listaProyectos" *ngFor="let proyecto of proyectos" class="mx-sm-5">
+              <!--Proyecto-->
+              <div class="row my-3">
+                
+                <div class="d-flex align-items-star">
+                  <!-- Título -->
+                  <div class="col-9">
+                    <h4>{{ proyecto.titulo }}</h4>
+                  </div>
+                  <!-- Botones -->
+                  <div class="col-3 d-flex justify-content-end"
+                    *ngIf="usuarioAutenticado">
+                    <!-- Botón Editar -->
+                    <a routerLink="/editarProyecto/{{ proyecto.id }}"
+                    ><span class="badge bg-negro text-rojo action-btn"
+                      ><i class="bi bi-pencil"></i></span
+                    ></a>
+                    <!-- Botón Elimninar -->
+                    <a (click)="onDelete(proyecto.id)"
+                      ><span class="badge bg-negro text-rojo ms-1 action-btn"
+                        ><i class="bi bi-x-lg"></i></span
+                    ></a>
+                  </div>
+                </div>
+
+                <div class="col-3 col-sm-2 d-flex justify-content-center align-items-center">
+                  <img src= '{{ proyecto.pathImagen }}' width="100%" alt="">
+                </div>
+                <div class="col-9 col-sm-10 d-flex align-items-center">
+                  <div class="row">
+                    <p>{{ proyecto.descripcion }}</p>
+                    <div class="d-flex">
+                      <a href="{{ proyecto.link }}" target="" class="btn btn-sm btn-outline-danger">Ver Sitio</a>
+                      <a href="{{ proyecto.github }}" target="" class="btn btn-sm btn-outline-danger ms-2" *ngIf="proyecto.github">Ver GitHub</a>
+                    </div>
+                  </div>              
+                </div>
               </div>
-              
             </div>
           </div>
         </div>
+      
+        
+        <!-- Navegación >  
+        <div class="col-sm-1 text-center">
+          <a routerLink="/acerca-de">
+            <h1>
+              <i
+                class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
+              ></i>
+            </h1>
+          </a>
+        </div>
+        -->
       </div>
     </div>
-		
-		<!-- Navegación >  
-		<div class="col-sm-1 text-center">
-			<a routerLink="/intereses">
-				<h1>
-					<i
-						class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
-					></i>
-				</h1>
-			</a>
-		</div>
-    -->
-	</div>
+  </div>
 
 </section>
