@@ -1,87 +1,90 @@
 <section class="container text-light" name="educacion">
-  <div class="row align-items-center">
-    <!-- Navegación <  -->
-    <div class="col-sm-1 text-center">
-      <a routerLink="/experiencia">
-        <h1>
-          <i
-            class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
-          ></i>
-        </h1>
-      </a>
-    </div> 
+  <div class="card shadow-lg bg-dark bg-opacity-25 p-4">
+    <div class="card-body">
+      <div class="row align-items-center">
+        <!-- Navegación <  -->
+        <div class="col-sm-1 text-center">
+          <a routerLink="/experiencia">
+            <h1>
+              <i
+                class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
+              ></i>
+            </h1>
+          </a>
+        </div> 
 
-    <!-- Contenido  -->
-    <div class="col col-sm-10 align-items-center">
-      <div class="row mx-sm-5">
-        <!-- Título -->
-        <div class="d-flex align-items-star">
-          <div class="col-9">
-            <h1 class="d-inline">Formación</h1>
-          </div>
-          <!-- Botón Nueva Formación-->
-          <div class="col-3" *ngIf="usuarioAutenticado">
-            <a routerLink="/nuevaFormacion"
-              ><span class="badge bg-negro text-rojo action-btn"
-                ><i class="bi bi-plus-lg"></i></span
-            ></a>
+        <!-- Contenido  -->
+        <div class="col col-sm-10 align-items-center">
+          <div class="row mx-sm-5">
+            <!-- Título -->
+            <div class="d-flex align-items-star">
+              <div class="col-9">
+                <h1 class="d-inline">Formación</h1>
+              </div>
+              <!-- Botón Nueva Formación-->
+              <div class="col-3" *ngIf="usuarioAutenticado">
+                <a routerLink="/nuevaFormacion"
+                  ><span class="badge bg-negro text-rojo action-btn"
+                    ><i class="bi bi-plus-lg"></i></span
+                ></a>
+              </div>
+            </div>
+
+            <!-- Lista de formaciones -->
+            <div 
+              id="listaFormacion" 
+              *ngFor="let formacion of formaciones" class="mx-sm-5"
+            >
+              <!--Foramcion-->
+              <div class="row my-3">
+
+                <div class="d-flex align-items-star">
+                  <!-- Título -->
+                  <div class="col-9">
+                    <h4>{{ formacion.titulo }}</h4>
+                  </div>
+                  <!-- Botones -->
+                  <div class="col-3 d-flex justify-content-end"
+                  *ngIf="usuarioAutenticado">
+                    <!-- Botón Editar -->
+                    <a routerLink="/editarFormacion/{{ formacion.id }}"
+                    ><span class="badge bg-negro text-rojo ms-4 action-btn"
+                      ><i class="bi bi-pencil"></i></span
+                    ></a>
+                    <!-- Botón Elimninar -->
+                    <a (click)="onDelete(formacion.id)"
+                      ><span class="badge bg-negro text-rojo ms-1 action-btn"
+                        ><i class="bi bi-x-lg"></i></span
+                    ></a>
+                  </div>              
+                </div>
+                <div>
+                  <h6 class="lead">{{ formacion.periodo }}</h6>
+                </div>
+                <div
+                class="col-3 col-sm-2 d-flex justify-content-center align-items-center"
+                >
+                  <img src= '{{ formacion.logo }}'  width="100%" alt="">
+                </div>
+                <div class="col-9 col-sm-10 d-flex align-items-center">
+                  <span>{{ formacion.descripcion }}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Lista de formaciones -->
-        <div 
-          id="listaFormacion" 
-          *ngFor="let formacion of formaciones" class="mx-sm-5"
-        >
-          <!--Foramcion-->
-          <div class="row my-3">
-
-            <div class="d-flex align-items-star">
-              <!-- Título -->
-              <div class="col-9">
-                <h4>{{ formacion.titulo }}</h4>
-              </div>
-              <!-- Botones -->
-              <div class="col-3 d-flex justify-content-end"
-              *ngIf="usuarioAutenticado">
-                <!-- Botón Editar -->
-                <a routerLink="/editarFormacion/{{ formacion.id }}"
-                ><span class="badge bg-negro text-rojo ms-4 action-btn"
-                  ><i class="bi bi-pencil"></i></span
-                ></a>
-                <!-- Botón Elimninar -->
-                <a (click)="onDelete(formacion.id)"
-                  ><span class="badge bg-negro text-rojo ms-1 action-btn"
-                    ><i class="bi bi-x-lg"></i></span
-                ></a>
-              </div>              
-            </div>
-            <div>
-              <h6 class="lead">{{ formacion.periodo }}</h6>
-            </div>
-            <div
-             class="col-3 col-sm-2 d-flex justify-content-center align-items-center"
-             >
-              <img src= '{{ formacion.logo }}'  width="100%" alt="">
-            </div>
-            <div class="col-9 col-sm-10 d-flex align-items-center">
-              <span>{{ formacion.descripcion }}</span>
-            </div>
-          </div>
+        <!-- Navegación >  -->
+        <div class="col-sm-1 text-center">
+          <a routerLink="/habilidades">
+            <h1>
+              <i
+                class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
+              ></i>
+            </h1>
+          </a>
         </div>
       </div>
     </div>
-
-    <!-- Navegación >  -->
-    <div class="col-sm-1 text-center">
-      <a routerLink="/habilidades">
-        <h1>
-          <i
-            class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
-          ></i>
-        </h1>
-      </a>
-    </div>
   </div>
-
 </section>

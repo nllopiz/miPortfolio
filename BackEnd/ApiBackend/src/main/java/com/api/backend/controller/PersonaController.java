@@ -40,22 +40,22 @@ public class PersonaController {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<PersonaDTO> verPersonaPorId(@PathVariable(name = "id") long id){
+    public ResponseEntity<PersonaDTO> verPersonaPorId(@PathVariable(value = "id") long id){
         return ResponseEntity.ok(personaService.buscarPersonaPorId(id));
     }
         
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
-    public ResponseEntity<PersonaDTO> editarPersona(@RequestBody PersonaDTO datosNuevosPersonaDTO, @PathVariable(name = "id") long id){
-        //PersonaDTO personaRespuesta = personaService.editarPersona(personaDTO, id);
-        PersonaDTO personaBuscada = personaService.buscarPersonaPorId(id);
-        personaBuscada = datosNuevosPersonaDTO;
-        return new ResponseEntity<>(personaService.crearPersona(personaBuscada), HttpStatus.OK);
+    public ResponseEntity<PersonaDTO> editarPersona(
+            @RequestBody PersonaDTO datosNuevosPersonaDTO, 
+            @PathVariable(value = "id") long id){
+        PersonaDTO personaEditar = personaService.editarPersona(id, datosNuevosPersonaDTO);
+        return new ResponseEntity<>(personaEditar, HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminarPersona(@PathVariable(name = "id") long id){
+    public ResponseEntity<String> eliminarPersona(@PathVariable(value = "id") long id){
         personaService.eliminarPersona(id);
         return new ResponseEntity<>("Persona eliminada", HttpStatus.OK);
         

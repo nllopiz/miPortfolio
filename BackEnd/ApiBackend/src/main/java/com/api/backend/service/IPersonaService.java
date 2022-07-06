@@ -12,8 +12,7 @@ public interface IPersonaService {
     public PersonaDTO crearPersona(PersonaDTO personaNuevaDTO);
     public List<PersonaDTO> verPersonas();
     public PersonaDTO buscarPersonaPorId(Long id);
-    //El método editarPersona(PersonaDTO datosNuevosPersona, Long id) se implementa
-    //en el controlador, combinando buscarPersonaPorId() y crearPersona()
+    public PersonaDTO editarPersona(Long id, PersonaDTO personaEditadaDTO);
     public void eliminarPersona(Long id);
     
 

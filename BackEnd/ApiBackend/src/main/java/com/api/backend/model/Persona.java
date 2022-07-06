@@ -1,6 +1,6 @@
 package com.api.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+//import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -74,4 +74,5 @@ public class Persona implements Serializable {
         this.sobreMi = sobreMi;
     }
 
+    
 }

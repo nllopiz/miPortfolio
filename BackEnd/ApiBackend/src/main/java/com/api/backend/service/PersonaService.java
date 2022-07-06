@@ -66,6 +66,23 @@ public class PersonaService implements IPersonaService {
         PersonaDTO personaRespuesta = convertirEntidadDTO(personaNueva);
         return personaRespuesta;
     }
+    
+    @Override
+    public PersonaDTO editarPersona(Long id, PersonaDTO personaEditadaDTO) {
+        Persona personaEditar = personaRepo.findById(id)
+                .orElseThrow(()-> new ExceptionNotFound("Persona", "id", id));
+        personaEditar.setApellido(personaEditadaDTO.getApellido());
+        personaEditar.setEmail(personaEditadaDTO.getEmail());
+        personaEditar.setNombre(personaEditadaDTO.getNombre());
+        personaEditar.setPathFoto(personaEditadaDTO.getPathFoto());
+        personaEditar.setSobreMi(personaEditadaDTO.getSobreMi());
+        personaEditar.setTitulo(personaEditadaDTO.getTitulo());
+        personaEditar.setUbicacion(personaEditadaDTO.getUbicacion());
+        
+        Persona personaEditada = personaRepo.save(personaEditar);
+        return convertirEntidadDTO(personaEditada);
+        
+    }
 
     @Override
     public List<PersonaDTO> verPersonas() {
@@ -85,5 +102,7 @@ public class PersonaService implements IPersonaService {
     public void eliminarPersona(Long id) {
         personaRepo.deleteById(id);
     }
+
+    
 
 }
