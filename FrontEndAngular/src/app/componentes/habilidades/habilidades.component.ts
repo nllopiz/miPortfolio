@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartDataset, ChartOptions } from 'chart.js';
+import { Router } from '@angular/router';
+import { ChartData, ChartDataset, ChartOptions } from 'chart.js';
 import { ToastrService } from 'ngx-toastr';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
@@ -13,8 +14,9 @@ import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 export class HabilidadesComponent implements OnInit {
 
   public habilidades: any;
-  usuarioAutenticado: any;
+  usuarioAutenticado: any;  
 
+  graficoChartId: any[] = [];
   graficoChartOptions: ChartOptions = {responsive: true};
   graficoChartDataSet: ChartDataset[] = [];
   graficoChartLabels: String[] = [];
@@ -26,35 +28,39 @@ export class HabilidadesComponent implements OnInit {
   constructor(
     private datosPortfolioServicio: DatosPorfolioService, 
     private autenticacionServicio: AutenticacionService,
-    private toaster: ToastrService
+    private toaster: ToastrService,
+    private router: Router
   ) {  }
 
   ngOnInit(): void {
     this.datosPortfolioServicio.verHabilidades().subscribe(data => {
       this.habilidades = data;
-      console.log(this.habilidades)
+      console.log(this.habilidades);
       for (const item of this.habilidades) {
         this.graficoChartDataSet.push ({data: item.porcentajes});
         this.graficoChartLabels.push(item.nombre);
+        this.graficoChartId.push(item.id)
       }
       this.usuarioAutenticado = this.autenticacionServicio.usuarioAutenticado.tokenDeAcceso;
-      console.log('dataset: ' + this.graficoChartDataSet);
-      console.log('labels' + this.graficoChartLabels);
+
+      console.log(this.graficoChartDataSet);
+      console.log(this.graficoChartLabels);
     });
   }
 
   onDelete(id: number): void {
-    console.log('Borrar proyecto ' + id);
-    this.datosPortfolioServicio.eliminarProyecto(id).subscribe(
+    console.log('Borrar habilidad ' + id);
+    this.datosPortfolioServicio.eliminarHabilidad(id).subscribe(
       data => {
         this.ngOnInit();
       },
       err => {
         console.log('eliminado');
-        this.toaster.success('Proyecto eliminado', 'OK', {
+        this.toaster.success('Habilidad eliminado', 'OK', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
-        this.ngOnInit();
+        this.router.navigateByUrl('/RefrshComponent', {skipLocationChange: true}).then(()=> this.router.navigate(['/habilidades']));
+
       }
     );
   }

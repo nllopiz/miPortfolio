@@ -18,6 +18,8 @@ import { NuevaFormacionComponent } from '../componentes/formacion/nueva-formacio
 import { EditarProyectoComponent } from '../componentes/proyectos/editar-proyecto.component';
 import { NuevoProyectoComponent } from '../componentes/proyectos/nuevo-proyecto.component';
 import { EditarAcercaDeComponent } from '../componentes/acerca-de/editar-acerca-de.component';
+import { NuevaHabilidadComponent } from '../componentes/habilidades/nueva-habilidad.component';
+import { EditarHabilidadComponent } from '../componentes/habilidades/editar-habilidad.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path: 'editarFormacion/:id', component:EditarFormacionComponent, canActivate:[GuardGuard]},
   {path: 'nuevaFormacion', component:NuevaFormacionComponent, canActivate:[GuardGuard]},
   {path: 'habilidades', component:HabilidadesComponent},
+  {path: 'editarHabilidad/:id', component:EditarHabilidadComponent, canActivate:[GuardGuard]},
+  {path: 'nuevaHabilidad', component:NuevaHabilidadComponent, canActivate:[GuardGuard]},
   {path: 'proyectos', component:ProyectosComponent},
   {path: 'editarProyecto/:id', component:EditarProyectoComponent, canActivate:[GuardGuard]},
   {path: 'nuevoProyecto', component: NuevoProyectoComponent, canActivate:[GuardGuard]},

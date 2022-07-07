@@ -95,7 +95,7 @@ export class DatosPorfolioService {
   }
 
   nuevaHabilidad(habilidad: Habilidad):Observable<any> {
-    return this.httpClient.post<any>(this.url + "/habilidad", habilidad);
+    return this.httpClient.post<any>(this.url + "/habilidades", habilidad);
   }
 
   verHabilidades():Observable<any> {
@@ -107,7 +107,7 @@ export class DatosPorfolioService {
   }
 
   editarHabilidad(id: number, habilidad: Habilidad):Observable<any> {
-    return this.httpClient.put<any>(this.url + '/habilidades/' + id, Habilidad);
+    return this.httpClient.put<any>(this.url + '/habilidades/' + id, habilidad);
   }
 
   eliminarHabilidad(id: number):Observable<any> {

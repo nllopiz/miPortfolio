@@ -10,7 +10,7 @@ import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 })
 export class ExperienciaComponent implements OnInit {
 
-  experiencias: any;
+  public experiencias: any;
   usuarioAutenticado: any;
 
   constructor(

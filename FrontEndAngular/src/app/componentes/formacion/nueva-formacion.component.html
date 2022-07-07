@@ -1,4 +1,5 @@
-<form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="col-6 mx-auto">
+<div class="card shadow-lg bg-dark bg-opacity-25 p-4 col col-sm-5 mx-auto">
+  <form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="col px-2">
     <h3 class="text-light mx-auto">Nueva Formación</h3>
     <div class="mb-3 form-outline form-white">
       <div class="form-group">
@@ -24,7 +25,9 @@
         <textarea type="text" name="descripcion" id="descripcion" class="form-control" [(ngModel)]="descripcion" required></textarea>
       </div>
     </div>
-  
-    <button type="submit" class="btn bg-rojo text-light" [disabled]="!f.valid">Crear</button>
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-outline-secondary" routerLink="/formacion">Cancelar</button>
+      <button type="submit" class="btn btn-outline-danger" [disabled]="!f.valid">Crear</button>
+    </div>  
   </form>
-  
+</div>

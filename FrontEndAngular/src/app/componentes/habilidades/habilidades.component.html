@@ -22,8 +22,8 @@
                 <h1 class="d-inline">Habilidades</h1>
               </div>
               <!-- Botón Nueva Habilidad-->
-              <div class="col-3 mx-3" *ngIf="usuarioAutenticado">
-                <a routerLink="/nuevoProyecto"
+              <div class="mx-3" *ngIf="usuarioAutenticado">
+                <a routerLink="/nuevaHabilidad"
                   ><span class="badge bg-negro text-rojo action-btn"
                     ><i class="bi bi-plus-lg"></i></span
                 ></a>
@@ -42,11 +42,11 @@
                 <div class="col-3 d-flex justify-content-end"
                   *ngIf="usuarioAutenticado">
                   <!-- Botón Editar -->
-                  <a ><span class="badge bg-negro text-rojo action-btn"
+                  <a routerLink="/editarHabilidad/{{graficoChartId[i]}}"><span class="badge bg-negro text-rojo action-btn"
                     ><i class="bi bi-pencil"></i></span
                   ></a>
                   <!-- Botón Elimninar -->
-                  <a                 ><span class="badge bg-negro text-rojo ms-1 action-btn"
+                  <a (click)="onDelete(graficoChartId[i])"><span class="badge bg-negro text-rojo ms-1 action-btn"
                       ><i class="bi bi-x-lg"></i></span
                   ></a>
                 </div>
