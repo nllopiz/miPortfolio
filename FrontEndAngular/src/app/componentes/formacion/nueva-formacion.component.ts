@@ -29,13 +29,13 @@ export class NuevaFormacionComponent implements OnInit {
     const formacion = new Formacion(this.titulo, this.periodo, this.pathLogo, this.descripcion);
     this.datosPortfolioServicio.nuevaFormacion(formacion).subscribe(
       data => {
-        this.toaster.success('Formacion creada', 'OK', {
+        this.toaster.success('Formacion creada', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['./formacion']);
       },
       err => {
-        this.toaster.error('Fallo al crear la formacion', 'Fail', {
+        this.toaster.error('Fallo al crear la Formacion', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/formacion']);

@@ -10,15 +10,15 @@ import lombok.Setter;
 public class HabilidadDTO {
     Long id;
     String nombre;
-    String porcentajes;
+    int porcentajeDominio;
 
     public HabilidadDTO() {
     }
 
-    public HabilidadDTO(Long id, String nombre, String porcentajes) {
+    public HabilidadDTO(Long id, String nombre, int porcentajeDominio) {
         this.id = id;
         this.nombre = nombre;
-        this.porcentajes = porcentajes;
-    }    
+        this.porcentajeDominio = porcentajeDominio;
+    }  
 
 }

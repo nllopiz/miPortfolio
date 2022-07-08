@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
@@ -14,7 +15,9 @@ export class IniciarSesionComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private autenticacioService: AutenticacionService,
-    private ruta: Router) {
+    private toaster: ToastrService,
+    private ruta: Router
+  ) {
     this.form = this.formBuilder.group(
       {
         email: ['', [Validators.required, Validators.email]],
@@ -37,9 +40,19 @@ export class IniciarSesionComponent implements OnInit {
   onEnviar(event: Event) {
     event.preventDefault;
     this.autenticacioService.IniciarSesion(this.form.value).subscribe(data => {
+      this.toaster.success('Sesión iniciada', '', {
+        timeOut: 3800, positionClass: 'toast-top-center'
+      });
       console.log("DATA:" + JSON.stringify(data));
       this.ruta.navigate(['../acerca-de']);
-    })
+    },
+    err => {
+      this.toaster.error('Usuario y/o clave incorrecto', 'Error', {
+        timeOut: 3800, positionClass: 'toast-top-center'
+      });
+      this.ruta.navigate(['/iniciar-sesion']);
+    }
+    )
   }
 
 }

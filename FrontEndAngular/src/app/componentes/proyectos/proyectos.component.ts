@@ -39,7 +39,7 @@ export class ProyectosComponent implements OnInit {
       },
       err => {
         console.log('eliminado');
-        this.toaster.success('Proyecto eliminado', 'OK', {
+        this.toaster.success('Proyecto eliminado', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.ngOnInit();

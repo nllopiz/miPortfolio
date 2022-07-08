@@ -1,73 +1,103 @@
 <section class="container text-light" name="educacion">
   <div class="card shadow-lg bg-dark bg-opacity-25 p-4">
     <div class="card-body">
-      <div class="row align-items-center">
+      <div class="row">
         <!-- Navegación <  -->
-        <div class="col-sm-1 text-center">
-          <a routerLink="/experiencia">
-            <h1>
-              <i
-                class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
-              ></i>
-            </h1>
-          </a>
-        </div> 
+        <div class="col-sm-1 text-center my-5 d-none d-sm-block">
+          <div class="fixed">
+            <a routerLink="/experiencia">
+              <h1>
+                <i
+                  class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
+                ></i>
+              </h1>
+            </a>
+          </div>
+        </div>
 
         <!-- Contenido  -->
         <div class="col col-sm-10 align-items-center">
           <div class="row mx-sm-5">
             <!-- Título -->
-            <div class="d-flex align-items-star">
-              <div>
-                <h1 class="d-inline">Formación</h1>
+            <div class="d-flex justify-content-between">
+              <!-- Navegación en teléfono -->
+              <div class="d-block d-sm-none">
+                <div class="">
+                  <a routerLink="/experiencia">
+                    <h1>
+                      <i
+                        class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
+                      ></i>
+                    </h1>
+                  </a>
+                </div>
               </div>
-              <!-- Botón Nueva Formación-->
-              <div class="mx-3" *ngIf="usuarioAutenticado">
-                <a routerLink="/nuevaFormacion"
-                  ><span class="badge bg-negro text-rojo action-btn"
-                    ><i class="bi bi-plus-lg"></i></span
-                ></a>
+              <div class="mb-2">
+                <h4 class="d-inline">Formación</h4>
+                <!-- Botón Nueva Formación-->
+                <span class="mx-3" *ngIf="usuarioAutenticado">
+                  <a routerLink="/nuevaFormacion"
+                    ><span class="badge bg-negro text-rojo action-btn"
+                      ><i class="bi bi-plus-lg"></i></span
+                  ></a>
+                </span>
+              </div>
+              <!-- Navegación en teléfono -->
+              <div class="d-block d-sm-none">
+                <div class="">
+                  <a routerLink="/habilidades">
+                    <h1>
+                      <i
+                        class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
+                      ></i>
+                    </h1>
+                  </a>
+                </div>
               </div>
             </div>
 
             <!-- Lista de formaciones -->
-            <div 
-              id="listaFormacion" 
-              *ngFor="let formacion of formaciones" class="mx-sm-5"
+            <div
+              id="listaFormacion"
+              *ngFor="let formacion of formaciones"
+              class="card bg-dark bg-opacity-50 my-1"
             >
               <!--Foramcion-->
-              <div class="row my-3">
-
+              <div class="card-body">
                 <div class="d-flex align-items-star">
                   <!-- Título -->
-                  <div class="col-9">
-                    <h4>{{ formacion.titulo }}</h4>
+                  <div class="col-10">
+                    <p class="lead m-0">{{ formacion.titulo }}</p>
                   </div>
                   <!-- Botones -->
-                  <div class="col-3 d-flex justify-content-end"
-                  *ngIf="usuarioAutenticado">
+                  <div
+                    class="col-2 d-flex justify-content-end"
+                    *ngIf="usuarioAutenticado"
+                  >
                     <!-- Botón Editar -->
                     <a routerLink="/editarFormacion/{{ formacion.id }}"
-                    ><span class="badge bg-negro text-rojo ms-4 action-btn"
-                      ><i class="bi bi-pencil"></i></span
+                      ><span class="badge bg-negro text-rojo action-btn"
+                        ><i class="bi bi-pencil"></i></span
                     ></a>
                     <!-- Botón Elimninar -->
                     <a (click)="onDelete(formacion.id)"
                       ><span class="badge bg-negro text-rojo ms-1 action-btn"
                         ><i class="bi bi-x-lg"></i></span
                     ></a>
-                  </div>              
+                  </div>
                 </div>
                 <div>
-                  <h6 class="lead">{{ formacion.periodo }}</h6>
+                  <p class="py-1 m-0">{{ formacion.periodo }}</p>
                 </div>
-                <div
-                class="col-3 col-sm-2 d-flex justify-content-center align-items-center"
-                >
-                  <img src= '{{ formacion.logo }}'  width="100%" alt="">
-                </div>
-                <div class="col-9 col-sm-10 d-flex align-items-center">
-                  <span>{{ formacion.descripcion }}</span>
+                <div class="row">
+                  <div
+                    class="col-3 pe-0 pt-2 col-sm-2 d-flex justify-content-center align-items-start"
+                  >
+                    <img src="{{ formacion.pathLogo }}" width="100%" alt="" />
+                  </div>
+                  <div class="col-9 col-sm-10 d-flex align-items-center">
+                    <span>{{ formacion.descripcion }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,14 +105,16 @@
         </div>
 
         <!-- Navegación >  -->
-        <div class="col-sm-1 text-center">
-          <a routerLink="/habilidades">
-            <h1>
-              <i
-                class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
-              ></i>
-            </h1>
-          </a>
+        <div class="col-sm-1 text-center my-5 d-none d-sm-block">
+          <div class="fixed">
+            <a routerLink="/habilidades">
+              <h1>
+                <i
+                  class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
+                ></i>
+              </h1>
+            </a>
+          </div>
         </div>
       </div>
     </div>

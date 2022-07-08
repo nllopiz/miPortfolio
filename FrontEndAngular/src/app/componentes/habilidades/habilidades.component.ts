@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ChartData, ChartDataset, ChartOptions } from 'chart.js';
+import { ChartDataset, ChartOptions } from 'chart.js';
 import { ToastrService } from 'ngx-toastr';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
@@ -18,12 +18,14 @@ export class HabilidadesComponent implements OnInit {
 
   graficoChartId: any[] = [];
   graficoChartOptions: ChartOptions = {responsive: true};
-  graficoChartDataSet: ChartDataset[] = [];
+  graficoChartDataSet: ChartDataset[] = [
+    /*{
+      data: [60, 40],
+      borderColor: '#1c1c1c',
+      backgroundColor: ['#AB0000', '#1c1c1c']
+    }*/
+  ];
   graficoChartLabels: String[] = [];
-  graficoChartBgColor: any[] = [
-    { 
-      backgroundColor:["#ddd", "#6FC8CE", "#FAFFF2", "#FFFCC4", "#B9E8E0"] 
-    }];
   
   constructor(
     private datosPortfolioServicio: DatosPorfolioService, 
@@ -37,7 +39,7 @@ export class HabilidadesComponent implements OnInit {
       this.habilidades = data;
       console.log(this.habilidades);
       for (const item of this.habilidades) {
-        this.graficoChartDataSet.push ({data: item.porcentajes});
+        this.graficoChartDataSet.push ({data: [item.porcentajeDominio, 100-item.porcentajeDominio], backgroundColor:["#AB0000", "#1c1c1c"], borderColor:['#1c1c1c']});
         this.graficoChartLabels.push(item.nombre);
         this.graficoChartId.push(item.id)
       }
@@ -56,7 +58,7 @@ export class HabilidadesComponent implements OnInit {
       },
       err => {
         console.log('eliminado');
-        this.toaster.success('Habilidad eliminado', 'OK', {
+        this.toaster.success('Habilidad eliminada', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.router.navigateByUrl('/RefrshComponent', {skipLocationChange: true}).then(()=> this.router.navigate(['/habilidades']));
@@ -64,17 +66,6 @@ export class HabilidadesComponent implements OnInit {
       }
     );
   }
-
-  public chartColors() {
-    return [{
-      backgroundColor: '#ddd',
-      borderColor: 'rgba(225,10,24,0.2)',
-      pointBackgroundColor: 'rgba(225,10,24,0.2)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(225,10,24,0.2)'
-  }]
-}
 
   
 }

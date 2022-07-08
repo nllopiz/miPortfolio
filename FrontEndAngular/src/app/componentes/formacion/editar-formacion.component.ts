@@ -29,7 +29,7 @@ export class EditarFormacionComponent implements OnInit {
         //console.log(this.formacion);
       },
       err => {
-        this.toaster.error('Fallo al cargar la formacion', 'Fail', {
+        this.toaster.error('No se pueden encontrar los datos', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/formacion']);
@@ -41,13 +41,13 @@ export class EditarFormacionComponent implements OnInit {
   onUpdate(): void {
     this.datosPorfolioServicio.editarFormacion(this.id, this.formacion).subscribe(
       data => {
-        this.toaster.success('formacion actualizada', 'OK', {
+        this.toaster.success('Formacion actualizada', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['./formacion']);
       },
       err => {
-        this.toaster.error('Fallo al actualizar la formacion', 'Fail', {
+        this.toaster.error('Fallo al actualizar la Formacion', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/formacion']);

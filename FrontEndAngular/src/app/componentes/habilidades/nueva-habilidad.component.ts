@@ -12,7 +12,7 @@ import { DatosPorfolioService } from 'src/app/servicios/datos-porfolio.service';
 export class NuevaHabilidadComponent implements OnInit {
 
   nombre: string = '';
-  porcentajes: string = '';
+  porcentajeDominio: number = 0;
 
   constructor(
     private datosPortfolioServicio: DatosPorfolioService,
@@ -24,16 +24,16 @@ export class NuevaHabilidadComponent implements OnInit {
   }
 
   onCreate(): void {
-    const habilidad = new Habilidad(this.nombre, this.porcentajes);
+    const habilidad = new Habilidad(this.nombre, this.porcentajeDominio);
     this.datosPortfolioServicio.nuevaHabilidad(habilidad).subscribe(
       data => {
-        this.toaster.success('Habilidad creada', 'OK', {
+        this.toaster.success('Habilidad creada', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['./habilidades']);
       },
       err => {
-        this.toaster.error('Fallo al crear la habilidad', 'Fail', {
+        this.toaster.error('Fallo al crear la habilidad', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/habilidades']);

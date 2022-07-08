@@ -39,7 +39,7 @@ export class FormacionComponent implements OnInit {
       },
       err => {
         console.log('eliminado');
-        this.toaster.success('Formación eliminada', 'OK', {
+        this.toaster.success('Formación eliminada', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.ngOnInit();

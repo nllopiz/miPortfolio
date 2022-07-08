@@ -25,7 +25,7 @@ import { EditarHabilidadComponent } from '../componentes/habilidades/editar-habi
 const routes: Routes = [
   {path: 'iniciar-sesion', component:IniciarSesionComponent},
   {path: 'acerca-de', component:AcercaDeComponent},
-  {path: 'editarAcerca-de/:id', component:EditarAcercaDeComponent},
+  {path: 'editarAcerca-de/:id', component:EditarAcercaDeComponent, canActivate:[GuardGuard]},
   {path: 'experiencia', component:ExperienciaComponent},
   {path: 'nuevaExperiencia', component:NuevaExperienciaComponent, canActivate:[GuardGuard]},
   {path: 'editarExperiencia/:id', component:EditarExperienciaComponent, canActivate:[GuardGuard]},

@@ -1,52 +1,84 @@
-<section class="container text-light" name="proyectos">    
+<section class="container text-light" name="proyectos">
   <div class="card shadow-lg bg-dark bg-opacity-25 p-4">
     <div class="card-body">
-      <div class="row align-items-center">  	
+      <div class="row">
         <!-- Navegación <  -->
-        <div class="col-sm-1 text-center">
-          <a routerLink="/habilidades">
-            <h1>
-              <i
-                class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
-              ></i>
-            </h1>
-          </a>
+        <div class="col-sm-1 text-center my-5 d-none d-sm-block">
+          <div class="fixed">
+            <a routerLink="/habilidades">
+              <h1>
+                <i
+                  class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
+                ></i>
+              </h1>
+            </a>
+          </div>
         </div>
-    
+
         <!-- Contenido -->
         <div class="col col-sm-10 align-items-center">
           <div class="row mx-sm-5">
             <!-- Título -->
-            <div class="d-flex align-items-star">
-              <div>
-                <h1 class="d-inline">Proyectos</h1>
+            <div class="d-flex justify-content-between">
+              <!-- Navegación en teléfono -->
+              <div class="d-block d-sm-none">
+                <div class="">
+                  <a routerLink="/habilidades">
+                    <h1>
+                      <i
+                        class="bi bi-chevron-compact-left text-rojo bg-negro action-btn rounded"
+                      ></i>
+                    </h1>
+                  </a>
+                </div>
               </div>
-              <!-- Botón Nuevo Proyecto-->
-              <div class="col-3 mx-3" *ngIf="usuarioAutenticado">
-                <a routerLink="/nuevoProyecto"
-                  ><span class="badge bg-negro text-rojo action-btn"
-                    ><i class="bi bi-plus-lg"></i></span
-                ></a>
+              <div class="mb-2">
+                <h4 class="d-inline">Proyectos</h4>
+
+                <!-- Botón Nuevo Proyecto-->
+                <span class="mx-3" *ngIf="usuarioAutenticado">
+                  <a routerLink="/nuevoProyecto"
+                    ><span class="badge bg-negro text-rojo action-btn"
+                      ><i class="bi bi-plus-lg"></i></span
+                  ></a>
+                </span>
+              </div>
+              <!-- Navegación en teléfono -->
+              <div class="d-block d-sm-none">
+                <div class="">
+                  <a routerLink="/acerca-de">
+                    <h1>
+                      <i
+                        class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
+                      ></i>
+                    </h1>
+                  </a>
+                </div>
               </div>
             </div>
 
             <!-- Lista de proyectos-->
-            <div id="listaProyectos" *ngFor="let proyecto of proyectos" class="mx-sm-5">
+            <div
+              id="listaProyectos"
+              *ngFor="let proyecto of proyectos"
+              class="card bg-dark bg-opacity-50 my-1"
+            >
               <!--Proyecto-->
               <div class="row my-3">
-                
                 <div class="d-flex align-items-star">
                   <!-- Título -->
-                  <div class="col-9">
-                    <h4>{{ proyecto.titulo }}</h4>
+                  <div class="col-10">
+                    <p class="lead">{{ proyecto.titulo }}</p>
                   </div>
                   <!-- Botones -->
-                  <div class="col-3 d-flex justify-content-end"
-                    *ngIf="usuarioAutenticado">
+                  <div
+                    class="col-2 d-flex justify-content-end"
+                    *ngIf="usuarioAutenticado"
+                  >
                     <!-- Botón Editar -->
                     <a routerLink="/editarProyecto/{{ proyecto.id }}"
-                    ><span class="badge bg-negro text-rojo action-btn"
-                      ><i class="bi bi-pencil"></i></span
+                      ><span class="badge bg-negro text-rojo action-btn"
+                        ><i class="bi bi-pencil"></i></span
                     ></a>
                     <!-- Botón Elimninar -->
                     <a (click)="onDelete(proyecto.id)"
@@ -56,37 +88,51 @@
                   </div>
                 </div>
 
-                <div class="col-3 col-sm-2 d-flex justify-content-center align-items-center">
-                  <img src= '{{ proyecto.pathImagen }}' width="100%" alt="">
-                </div>
-                <div class="col-9 col-sm-10 d-flex align-items-center">
-                  <div class="row">
-                    <p>{{ proyecto.descripcion }}</p>
-                    <div class="d-flex">
-                      <a href="{{ proyecto.link }}" target="" class="btn btn-sm btn-outline-danger">Ver Sitio</a>
-                      <a href="{{ proyecto.github }}" target="" class="btn btn-sm btn-outline-danger ms-2" *ngIf="proyecto.github">Ver GitHub</a>
+                <div class="row">
+                  <div
+                    class="col-4 pe-0 col-sm-4 d-flex justify-content-center align-items-start"
+                  >
+                    <img src="{{ proyecto.pathImagen }}" width="100%" alt="" class="rounded"/>
+                  </div>
+                  <div class="col-8 col-sm-8 d-flex align-items-center">
+                    <div class="row">
+                      <p>{{ proyecto.descripcion }}</p>
+                      <div class="d-flex">
+                        <a
+                          href="{{ proyecto.link }}"
+                          target=""
+                          class="btn btn-sm btn-outline-danger"
+                          >Ver Sitio</a
+                        >
+                        <a
+                          href="{{ proyecto.github }}"
+                          target=""
+                          class="btn btn-sm btn-outline-danger ms-2"
+                          *ngIf="proyecto.github"
+                          >Ver GitHub</a
+                        >
+                      </div>
                     </div>
-                  </div>              
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      
-        
-        <!-- Navegación >  
-        <div class="col-sm-1 text-center">
-          <a routerLink="/acerca-de">
-            <h1>
-              <i
-                class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
-              ></i>
-            </h1>
-          </a>
+
+        <!-- Navegación >  -->
+        <div class="col-sm-1 text-center my-5 d-none d-sm-block">
+          <div class="fixed">
+            <a routerLink="/acerca-de">
+              <h1>
+                <i
+                  class="bi bi-chevron-compact-right text-rojo bg-negro action-btn rounded"
+                ></i>
+              </h1>
+            </a>
+          </div>
         </div>
-        -->
       </div>
     </div>
   </div>
-
 </section>

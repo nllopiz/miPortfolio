@@ -1,10 +1,10 @@
 export class Habilidad {
     id?: string;
     nombre: string;
-    porcentajes: string;
+    porcentajeDominio: number;
     
-    constructor(nombre: string, porcentajes: string) {
+    constructor(nombre: string, porcentajeDominio: number) {
         this.nombre = nombre;
-        this.porcentajes = porcentajes;
+        this.porcentajeDominio = porcentajeDominio;
     }
 }

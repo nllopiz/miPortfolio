@@ -28,7 +28,7 @@ export class EditarProyectoComponent implements OnInit {
         console.log(this.proyecto);
       },
       err => {
-        this.toaster.error('Fallo al cargar la proyecto', 'Fail', {
+        this.toaster.error('Fallo al cargar la proyecto', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/proyectos']);
@@ -39,13 +39,13 @@ export class EditarProyectoComponent implements OnInit {
   onUpdate(): void {
     this.datosPorfolioServicio.editarProyecto(this.id, this.proyecto).subscribe(
       data => {
-        this.toaster.success('proyecto actualizado', 'OK', {
+        this.toaster.success('Proyecto actualizado', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['./proyectos']);
       },
       err => {
-        this.toaster.error('Fallo al actualizar la proyecto', 'Fail', {
+        this.toaster.error('Fallo al actualizar el proyecto', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/proyectos']);

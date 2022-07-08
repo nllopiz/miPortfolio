@@ -120,27 +120,27 @@
         {
             "id": "4",
             "nombre": "PHP",
-            "porcentaje": [50,50]
+            "porcentaje": [70,30]
         },
         {
             "id": "5",
             "nombre": "MySQL",
-            "porcentaje": [60,40]
+            "porcentaje": [70,30]
         },
         {
             "id": "6",
             "nombre": "Angular",
-            "porcentaje": [30,70]
+            "porcentaje": [60,40]
         },
         {
             "id": "7",
             "nombre": "Java",
-            "porcentaje": [20,80]
+            "porcentaje": [60,40]
         },
         {
             "id": "8",
             "nombre": "Spring Boot",
-            "porcentaje": [20,80]
+            "porcentaje": [50,50]
         },
         {
             "id": "9",
@@ -150,13 +150,13 @@
         {
             "id": "10",
             "nombre": "React Native",
-            "porcentaje": [30,70]
+            "porcentaje": [50,50]
         }
     ],
     "proyectos": [
         {
             "id": "1",
-            "titulo": "Mi Portfolio Web",
+            "titulo": "Portfolio Web",
             "imagen": "/assets/images/imgPortfolio.jpg",
             "descripcion": "Angular, Java, Spring Boot, MySQL, Dev Ops",
             "link": "",

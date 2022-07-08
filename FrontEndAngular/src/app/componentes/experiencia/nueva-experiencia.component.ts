@@ -30,13 +30,13 @@ export class NuevaExperienciaComponent implements OnInit {
     const experiencia = new Experiencia(this.titulo, this.periodo, this.pathLogo, this.descripcion);
     this.datosPortfolioServicio.nuevaExperiencia(experiencia).subscribe(
       data => {
-        this.toaster.success('Experiencia creada', 'OK', {
+        this.toaster.success('Experiencia creada', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['./experiencia']);
       },
       err => {
-        this.toaster.error('Fallo al crear la experiencia', 'Fail', {
+        this.toaster.error('Fallo al crear la experiencia', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/experiencia']);

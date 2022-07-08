@@ -31,7 +31,7 @@ public class HabilidadService implements IHabilidadService {
 
         habilidadDTO.setId(habilidad.getId());
         habilidadDTO.setNombre(habilidad.getNombre());
-        habilidadDTO.setPorcentajes(habilidad.getPorcentajes());
+        habilidadDTO.setPorcentajeDominio(habilidad.getPorcentajeDominio());
 
         return habilidadDTO;
     }
@@ -42,7 +42,7 @@ public class HabilidadService implements IHabilidadService {
 
         habilidadNueva.setId(habilidadNuevaDTO.getId());
         habilidadNueva.setNombre(habilidadNuevaDTO.getNombre());
-        habilidadNueva.setPorcentajes(habilidadNuevaDTO.getPorcentajes());
+        habilidadNueva.setPorcentajeDominio(habilidadNuevaDTO.getPorcentajeDominio());
 
         return habilidadNueva;
     }
@@ -88,7 +88,7 @@ public class HabilidadService implements IHabilidadService {
         }
         
         habilidad.setNombre(datosHabilidad.getNombre());
-        habilidad.setPorcentajes(datosHabilidad.getPorcentajes());
+        habilidad.setPorcentajeDominio(datosHabilidad.getPorcentajeDominio());
         
         Habilidad habilidadEditada = habilidadRepo.save(habilidad);
         

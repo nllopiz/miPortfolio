@@ -30,13 +30,13 @@ export class NuevoProyectoComponent implements OnInit {
     const proyecto = new Proyecto(this.titulo, this.pathImage, this.descripcion, this.link, this.github);
     this.datosPortfolioServicio.nuevoProyecto(proyecto).subscribe(
       data => {
-        this.toaster.success('proyecto creado', 'OK', {
+        this.toaster.success('Proyecto creado', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['./proyectos']);
       },
       err => {
-        this.toaster.error('Fallo al crear la proyecto', 'Fail', {
+        this.toaster.error('Fallo al crear el proyecto', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/proyectos']);

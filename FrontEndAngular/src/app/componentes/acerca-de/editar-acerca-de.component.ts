@@ -29,7 +29,7 @@ export class EditarAcercaDeComponent implements OnInit {
       console.log(this.misDatos);
       },
       err => {
-        this.toaster.error('Fallo al cargar la proyecto', 'Fail', {
+        this.toaster.error('No se pueden encontrar los datos', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/acerca-de']);
@@ -41,7 +41,7 @@ export class EditarAcercaDeComponent implements OnInit {
   onUpdate(): void {
     this.datosPorfolioServicio.editarPersona(this.misDatos).subscribe(
       data => {
-        this.toaster.success('Datos actualizados', 'OK', {
+        this.toaster.success('Datos actualizados', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['./acerca-de']);

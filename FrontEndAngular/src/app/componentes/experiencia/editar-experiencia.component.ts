@@ -28,7 +28,7 @@ export class EditarExperienciaComponent implements OnInit {
         //console.log(this.experiencia);
       },
       err => {
-        this.toaster.error('Fallo al cargar la experiencia', 'Fail', {
+        this.toaster.error('No se pueden encontrar los datos', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/experiencia']);
@@ -40,13 +40,13 @@ export class EditarExperienciaComponent implements OnInit {
   onUpdate(): void {
     this.datosPorfolioServicio.editarExperiencia(this.id, this.experiencia).subscribe(
       data => {
-        this.toaster.success('Experiencia actualizada', 'OK', {
+        this.toaster.success('Experiencia actualizada', '', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['./experiencia']);
       },
       err => {
-        this.toaster.error('Fallo al actualizar la experiencia', 'Fail', {
+        this.toaster.error('Fallo al actualizar la experiencia', 'Error', {
           timeOut: 3800, positionClass: 'toast-top-center'
         });
         this.rutas.navigate(['/experiencia']);

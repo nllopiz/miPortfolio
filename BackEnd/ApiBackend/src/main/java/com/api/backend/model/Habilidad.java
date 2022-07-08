@@ -26,8 +26,8 @@ public class Habilidad implements Serializable {
     
     @Column(name = "nombre", nullable = false)
     String nombre;
-    @Column(name = "porcentajes", nullable = false)
-    String porcentajes;
+    @Column(name = "porcentajeDominio", nullable = false)
+    int porcentajeDominio;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idPersona", nullable = false)
@@ -37,10 +37,11 @@ public class Habilidad implements Serializable {
     
     }
 
-    public Habilidad(Long id, String nombre, String porcentajes) {
+    public Habilidad(Long id, String nombre, int porcentajeDominio, Persona persona) {
         this.id = id;
         this.nombre = nombre;
-        this.porcentajes = porcentajes;
+        this.porcentajeDominio = porcentajeDominio;
+        this.persona = persona;
     }
     
     
